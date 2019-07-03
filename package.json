@@ -12,8 +12,6 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.6.0",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "babel-plugin-wrap-in-js": "^1.1.1",
     "express": "^4.17.1",
     "next": "^8.1.0",
     "node-sass": "^4.12.0",
