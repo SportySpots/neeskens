@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Link from "next/link";
-import "./Navbar.scss";
+import Logo from "../Logo";
 
 class Navbar extends Component {
   constructor(props) {
@@ -10,19 +9,10 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav>
-        <div>
-          <Link href="/">
-            <a title="Our API">Home</a>
-          </Link>
-          <Link href="/about">
-            <a title="About Next JS">About Next JS</a>
-          </Link>
-          <mark className="badge">Hello!</mark>
-        </div>
-      </nav>
-    );
-  }
+          <section class="flex items-center justify-between flex-wrap p-4 ml-8">
+            <Logo/>
+          </section>
+    )}
 }
 
 export default Navbar;
