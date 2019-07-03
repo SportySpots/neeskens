@@ -9,7 +9,7 @@ class Navbar extends Component {
 
   render() {
     return (
-          <section class="flex items-center justify-between flex-wrap p-4 ml-8">
+          <section className="flex items-center justify-between flex-wrap p-4 pl-8 bg-chalk ">
             <Logo/>
           </section>
     )}

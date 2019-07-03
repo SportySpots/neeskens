@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="44px" viewBox="0 0 56 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>organise-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Landing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1024---Desktop---SportySpots-home" transform="translate(-765.000000, -752.000000)">
+            <g id="Section-3" transform="translate(0.000000, 567.000000)">
+                <g id="Item-3" transform="translate(688.000000, 170.000000)">
+                    <g id="organise-icon" transform="translate(73.000000, 7.000000)">
+                        <rect id="Rectangle" x="4" y="0" width="56" height="56"></rect>
+                        <g transform="translate(31.500000, 31.500000) rotate(15.000000) translate(-31.500000, -31.500000) translate(4.000000, 13.000000)">
+                            <path d="M36.8181818,36 C42.3373012,36 49.3855614,28.9135007 52.2616257,24.7048254 C53.9903727,22.1750716 55,19.1242623 55,15.84 C55,7.09180956 47.836556,0 39,0 C30.163444,0 23,7.09180956 23,15.84 C23,24.5881904 27.9816258,36 36.8181818,36 Z" id="Oval-Copy" fill="#005537"></path>
+                            <path d="M6.78076555,0 L40,0 L40,5.56410256 L1.70530257e-13,7 L1.70530257e-13,6.1025641 L5.75557492,0.420778601 C6.02868258,0.15117232 6.39700085,-3.73592779e-16 6.78076555,0 Z" id="Rectangle" fill="#005537"></path>
+                            <path d="M34,37 C42.836556,37 50,29.836556 50,21 C50,12.163444 41.6363636,5 34,5 C26.3636364,5 18,12.163444 18,21 C18,29.836556 25.163444,37 34,37 Z" id="Oval" fill="#009F36"></path>
+                            <path d="M1.45928339,5 L26.7004662,5 L33.9168085,5 L36.9664509,19.2350233 C37.1352807,20.0230815 36.6332969,20.7987924 35.8452387,20.9676222 C35.744765,20.9891472 35.6422989,21 35.5395453,21 L1.45928339,21 C0.653343427,21 2.8364966e-13,20.3466566 2.84217094e-13,19.5407166 L2.84217094e-13,6.45928339 C2.84118395e-13,5.65334343 0.653343427,5 1.45928339,5 Z" id="Rectangle" fill="#009F36"></path>
+                            <circle id="Oval" fill-opacity="0.84" fill="#00353A" cx="33.3649053" cy="21.0696081" r="5.5"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
