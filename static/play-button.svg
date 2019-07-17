@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>play button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="11.2 7 11.2 26.6 26.6 16.8"></polygon>
+        <rect id="path-3" x="0" y="0" width="70" height="70"></rect>
+    </defs>
+    <g id="Landing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1024---Desktop---SportySpots-home" transform="translate(-799.000000, -213.000000)">
+            <g id="Section-1" transform="translate(0.000000, 64.000000)">
+                <g id="Play-the-video" transform="translate(767.000000, 118.000000)">
+                    <g id="play-button" transform="translate(33.000000, 32.000000)">
+                        <circle id="Oval" stroke="#000000" stroke-width="1.4" cx="28" cy="28" r="28"></circle>
+                        <g id="ic_play_arrow" transform="translate(11.200000, 11.200000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="Colors/Black" mask="url(#mask-2)">
+                                <g transform="translate(-18.200000, -18.200000)">
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3"></use>
+                                    </mask>
+                                    <use id="Black" stroke="none" fill="#000000" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
