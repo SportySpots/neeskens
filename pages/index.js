@@ -2,6 +2,7 @@ import Head from "next/head";
 import "../scss/style.scss";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Explainer from "../components/Explainer"
 
 const Index = () => (
   <section className="container min-w-full">
@@ -11,6 +12,7 @@ const Index = () => (
     </Head>
     <Navbar />  
     <Hero />
+    <Explainer />
   </section>
 );
 

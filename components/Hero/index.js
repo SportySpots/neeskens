@@ -8,7 +8,7 @@ const Hero = () => {
         <section className=" container min-w-full pt-16">
             <div className="z-10 flex flex-no-wrap xxl:pl-64 xl:pl-40 lg:pl-40">
                 <div className="flex-row">
-                    <h1 className="font-sans font-normal xl:text-7xl lg:text-5xl md:text-5xl">Play more sports</h1>
+                    <h1 className="font-sans smm:text-l xl:text-7xl lg:text-5xl md:text-5xl">Play more sports</h1>
                     <h2 className="font-sans lg:text-3xl">Play sports with others in your city</h2>
                     <h3 className="font-sans lg:text-xl lg:mt-4">For iPhone and Android</h3>
                 </div>
