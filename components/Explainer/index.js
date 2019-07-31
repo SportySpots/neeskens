@@ -5,8 +5,8 @@ import DiscoverImage from '../DiscoverImage';
 const Explainer = () => {
     return (
         <React.Fragment>
-            <h1 className="font-sans text-center text-5xl mt-24">The city as your playground</h1>
-        <section className="flex flex-col sm:flex-row justify-around mb-24 mt-16 pl-24 pr-24">
+            <h1 className="font-sans text-center text-5xl mt-16 lg:mt-24">The city as your playground</h1>
+        <section className="flex flex-col sm:flex-row justify-around mb-24 mt-8 lg:mt-16 pl-24 pr-24">
                 <Card
                     svg={'/static/discover-icon.svg'}
                     title={'Discover spots'} 
