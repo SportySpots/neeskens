@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Explainer from "../components/Explainer";
 import Conversion from "../components/Conversion";
+import Footer from "../components/Footer"
 
 const Index = () => (
   <section className="container min-w-full">
@@ -15,6 +16,7 @@ const Index = () => (
     <Hero />
     <Explainer />
     <Conversion />
+    <Footer />
   </section>
 );
 
