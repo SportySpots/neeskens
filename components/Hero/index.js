@@ -17,7 +17,9 @@ const Hero = () => {
                         <h3 className="font-sans lg:text-xl lg:mt-4">Watch the video</h3>
                     </div>
                     <div className="flex w-200 justify-center">
+                        <button>
                         <PlayImage />
+                        </button>
                     </div>
                 </div>
             </div>
