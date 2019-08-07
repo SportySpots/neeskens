@@ -7,7 +7,7 @@ const Conversion = () => {
     const ref = React.createRef();
 
     React.useEffect(() => {
-        TweenLite.to(ref.current, 0.1, { x: "+=100" });
+        TweenLite.to(ref.current, 0, { x: "+=100" });
     }, []);
 
     const animate = (elm) => {
