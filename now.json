@@ -1,4 +1,8 @@
 {
+  "name": "neeskens",
+  "version": 2,
+  "scope": "sportyspots",
+
   "routes": [
     {
       "src": "/privacy.html",
