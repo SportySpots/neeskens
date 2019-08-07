@@ -10,11 +10,13 @@ app
   .prepare()
   .then(() => {
     const server = express();
-    const showRoutes = require("./routes/index.js");
-
-    server.use("/api", showRoutes);
-
     server.get("*", (req, res) => {
+      if (req.url === '/privacy.html') {
+        req.url = '/privacy';
+      }
+      if (req.url === '/terms.html') {
+        req.url = '/terms';
+      }
       return handle(req, res);
     });
 
