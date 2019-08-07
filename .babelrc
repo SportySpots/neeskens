@@ -1,5 +1,18 @@
 {
-  "plugins": [],
+  "plugins": [
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "cleanupIDs": false
+            }
+          ]
+        }
+      }
+    ]
+  ],
   "presets": ["next/babel"],
   "ignore": []
 }
