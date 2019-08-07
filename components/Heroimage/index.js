@@ -1,5 +1,5 @@
 import React from 'react';
-import { TweenLite, TweenMax, TimelineLite, CSSPlugin } from "gsap";
+import { TweenLite, TweenMax } from "gsap";
 
 import HeroImageSvg from '../../static/sportyspotsmainimage.svg';
 
