@@ -17,7 +17,8 @@ app
       if (req.url === '/terms.html') {
         req.url = '/terms';
       }
-      return handle(req, res);
+      const result = handle(req, res);
+      return result;
     });
 
     server.listen(PORT, err => {
