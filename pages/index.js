@@ -1,4 +1,4 @@
-// import 'intersection-observer';
+import 'intersection-observer';
 import Head from "next/head";
 import "../scss/style.scss";
 import Navbar from "../components/Navbar";
