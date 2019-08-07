@@ -32,7 +32,7 @@ const HeroImage = () => {
 
   return (
     <div ref={selfRef}>
-      <HeroImageSvg className="min-w-full lg:pl-24 lg:pr-24" />
+      <HeroImageSvg width="100%" height="auto" className="min-w-full lg:pl-24 lg:pr-24" />
     </div>
   )
 }
