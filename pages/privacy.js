@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 
 const privacy = () => (
-  <section id="privacy" className="container mx-auto text-section">
+  <section id="privacy" className="container mx-auto text-section p-8">
     <Head>
       <title>SportySpots - Laagdrempelig sporten in je stad</title>
     </Head>
