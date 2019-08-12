@@ -1,9 +1,24 @@
 import React from 'react';
+import ModalVideo from 'react-modal-video'
 import HeroImage from '../Heroimage';
 import PlayImage from '../Playimage';
 
 
-const Hero = () => {
+class Hero extends React.Component {
+
+    constructor () {
+      super()
+      this.state = {
+        isOpen: false
+      }
+      this.openModal = this.openModal.bind(this)
+    }
+  
+    openModal () {
+      this.setState({isOpen: true})
+    }
+
+    render(){
     return (
         <section className=" container min-w-full pt-8 lg:pt-16">
             <div className="z-10 flex flex-col lg:flex-row xxl:pl-64 xl:pl-40 lg:pl-40">
@@ -17,7 +32,8 @@ const Hero = () => {
                         <h3 className="font-sans lg:text-xl lg:mt-4">Watch the video</h3>
                     </div>
                     <div className="flex w-200 justify-center">
-                        <button>
+                        <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='5ydkSgHlKWQ' onClose={() => this.setState({isOpen: false})} />    
+                        <button onClick={this.openModal}>
                         <PlayImage />
                         </button>
                     </div>
@@ -26,6 +42,6 @@ const Hero = () => {
             <HeroImage />
         </section>
     )
-}
+}}
 
 export default Hero;
