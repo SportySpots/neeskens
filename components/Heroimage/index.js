@@ -8,22 +8,21 @@ const HeroImage = () => {
 
   const animate = () => {
     const svg = selfRef.current.firstChild;
-    const balls = svg.querySelectorAll('#Oval-4');
-    TweenMax.to(balls, .5, {y: -100}).yoyo(true).repeat(-1).play();
-    TweenLite.fromTo(svg.querySelector("#Mountain"), 2, { x: -100 }, { x: 0 });
-    TweenLite.fromTo(svg.querySelector("#Mountain-2"), 2, { x: 100 }, { x: 0 });
-    TweenLite.fromTo(svg.querySelector("#boybasketball"), 3, { x: "-=50" }, { x: "+=50" });
-    TweenLite.fromTo(svg.querySelector("#boysoccer"), 3, { x: "+=50" }, { x: "-=50" });
-
-    const girl = svg.querySelector("#girlvolleyball");
-
-    const tl = new TimelineMax();
-    tl.fromTo(girl, 3, {opacity:0}, {opacity:1});
-    tl.to(girl, 3, {x: "-=200"}, 0);
-    tl.to(girl, 1, {scaleX: -1});
-    tl.to(girl, 3, {x: "+=500"}, 3);
-    tl.to(girl, 1, {opacity: 0}, 5);
-    tl.repeat(-1);
+    const ball10 = svg.querySelectorAll('#Oval-10');
+    TweenMax.to(ball10, 1, {y: -10}).yoyo(true).repeat(-1).play();
+    const ball4 = svg.querySelectorAll('#Oval-4');
+    TweenMax.to(ball4, 1, {y: -10}).yoyo(true).repeat(-1).play();
+    
+    const shadowball1 = svg.querySelectorAll('#Ovalshadow1');
+    TweenMax.to(shadowball1, 1, {scaleX:1.1}).yoyo(true).repeat(-1).play();
+    const shadowball2 = svg.querySelectorAll('#Ovalshadow2');
+    TweenMax.to(shadowball2, 1, {scaleX:1.1}).yoyo(true).repeat(-1).play();
+    const shadowball3 = svg.querySelectorAll('#Ovalshadow3');
+    TweenMax.to(shadowball3, 1, {scaleX: 1.1}).yoyo(true).repeat(-1).play();
+    
+    
+    // TweenLite.fromTo(svg.querySelector("#Mountain"), 2, { x: -100 }, { x: 0 });
+    // TweenLite.fromTo(svg.querySelector("#Mountain-2"), 2, { x: 100 }, { x: 0 });
   };
 
   React.useEffect(() => {
