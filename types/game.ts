@@ -1,11 +1,17 @@
-import { DateTime, UUID } from './utils';
-import { User } from './user';
-import { Sport } from './sport';
-import { Spot } from './spot';
+import { DateTime, UUID } from "./utils";
+import { User } from "./user";
+import { Sport } from "./sport";
+import { Spot } from "./spot";
+
+export interface Attendee {
+  uuid: UUID;
+  status: "ATTENDING" | "DECLINED";
+  user: User;
+}
 
 export interface Game {
   uuid: UUID;
-  attendees: any[];
+  attendees: Attendee[];
   capacity: number;
   chatkit_room_id: number;
   created_at: DateTime;
@@ -19,7 +25,7 @@ export interface Game {
   is_listed: boolean;
   is_shareable: boolean;
   modified_at: DateTime;
-  name: string
+  name: string;
   organizer: User;
   rsvp_close_time: DateTime;
   rsvp_closed: boolean;
