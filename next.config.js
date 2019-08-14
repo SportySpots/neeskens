@@ -12,6 +12,9 @@ module.exports = withSass({
     seedorfHost: 'https://api.sportyspots.com',
     googleMapsKey: process.env.GOOGLE_MAPS_KEY,
   },
+  env: {
+    seedorfGraphQLUrl: 'https://api.sportyspots.com/graphql',
+  },
 });
 
 // const withImages = require('next-images')
