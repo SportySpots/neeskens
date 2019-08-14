@@ -26,6 +26,9 @@ const game = (props: IProps) => {
   }
 
   const game = query.data.game;
+
+  // console.log(game.start_time, moment(game.start_time).tz(game.start_timezone).format());
+
   return (
     <section id="activity" className="bg-concrete-100 pb-32">
       <Head>
