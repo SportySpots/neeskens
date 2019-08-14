@@ -1,13 +1,18 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import GET_GAMES_LIST from '../../GraphQL/Games/Queries/GET_GAMES_LIST';
+import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS';
 
 const games = (props, ctx, ctxa) => {
-  const { loading, data } = useQuery(GET_GAMES_LIST);
+  const { loading, data } = useQuery(GET_GAME_DETAILS, { variables: { uuid: props.id } });
 
+  if (!data) {
+    return (
+      <div>Not found... {props.id}</div>
+    )
+  }
   return (
     <div>
-      {data.games && data.games.length}
+      {data && JSON.stringify(data.game)}
     </div>
   );
 };
