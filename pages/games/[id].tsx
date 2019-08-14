@@ -30,19 +30,19 @@ const game = (props: IProps) => {
   // console.log(game.start_time, moment(game.start_time).tz(game.start_timezone).format());
 
   return (
-    <section id="activity" className="bg-concrete-100 pb-32">
+    <section id="activity" className="bg-concrete-100">
       <Head>
         <title>SportySpots - gratis sporten in je stad</title>
       </Head>
       <Navbar />
-      <div className="flex lg:flex-row">
-        <div className="flex flex-col">
-          <ActivityImage game={game} />
-          <ActivityDescription />
-          <ActivityAttendees game={game} />
-        </div>
-        <div id="details" className="lg:flex-1">
+      <div className="flex flex-col lg:flex-row-reverse">
+        <div className="mx-4 my-8 lg:mr-48 lg:ml-16 lg:w-1/4">
           <p>ActivityDetails</p>
+        </div>
+        <div className="mx-4 my-8 lg:ml-48 lg:mr-16 lg:w-3/4 flex flex-col">
+          <ActivityImage game={game} />
+          <ActivityDescription game={game} />
+          <ActivityAttendees game={game} />
         </div>
       </div>
 

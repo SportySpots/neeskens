@@ -11,18 +11,13 @@ const ActivityImage = ({ game }: IProps) => {
     return null;
   }
   return (
-    <div className="rounded-lg shadow">
+    <div className="rounded-lg shadow mb-8 ">
       <div className="absolute rounded-br-lg rounded-tl-lg bg-notify-100 w-24">
         <p className="pt-2 px-4 text-2xl font-bold text-chalk text-center">
-          19
+          {game.start_time}
         </p>
-        <p className="pb-2 px-4 text-xl text-chalk text-center">april</p>
       </div>
-      <img
-        className="rounded-lg bg-night"
-        src={firstImage.image}
-        alt="activity image"
-      />
+      <img className="rounded-lg" src={firstImage.image} alt="activity image" />
     </div>
   );
 };

@@ -1,18 +1,19 @@
 @tailwind base;
 
 h2 {
-  @apply text-3xl;
-  @apply font-medium
+    @apply text-2xl;
+    @apply font-medium
 }
 
 .text-section {
-  h4 {
-    @apply text-2xl;
-  }
-  p {
-    @apply .mt-4;
-    @apply .mb-8;
-  }
+    h4 {
+        @apply text-xl;
+    }
+
+    p {
+        @apply .mt-4;
+        @apply .mb-8;
+    }
 }
 
 @tailwind components;
