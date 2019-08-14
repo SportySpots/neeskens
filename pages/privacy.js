@@ -1,5 +1,4 @@
 import "../scss/style.scss";
-import '../scss/textSection.scss';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Conversion from '../components/Conversion';
@@ -14,7 +13,6 @@ const privacy = () => (
     <Navbar/>
     <main className="container mx-auto text-section p-8">
       <h2>Privacy Policy</h2>
-
       <p>
         SportySpots built the SportySpots app as a Free app. This SERVICE is provided by SportySpots
         at

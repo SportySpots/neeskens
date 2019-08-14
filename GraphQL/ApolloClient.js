@@ -18,7 +18,10 @@ export const addErrorHandlers = link => ApolloLink.from([
         console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`);
       });
     }
-    if (networkError) console.log(`[Network error]: ${networkError}`);
+    if (networkError) {
+      console.log(`[Network error]: ${networkError}`);
+      console.log(networkError);
+    }
   }),
   link,
 ]);
@@ -34,6 +37,12 @@ const defaultOptions = {
     fetchPolicy: 'network-only',
     errorPolicy: 'all',
   },
+};
+
+const config = {
+  link: addErrorHandlers(httpLink),
+  cache,
+  defaultOptions,
 };
 
 const client = new ApolloClient({
