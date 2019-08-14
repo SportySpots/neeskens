@@ -32,13 +32,13 @@ const game = (props: IProps) => {
         <title>SportySpots - gratis sporten in je stad</title>
       </Head>
       <Navbar />
-      <div className="lg:flex-1 lg:flex-col">
-        <div className="flex">
+      <div className="flex lg:flex-row">
+        <div className="flex flex-col">
           <ActivityImage game={game} />
           <ActivityDescription />
           <ActivityAttendees game={game} />
         </div>
-        <div className="lg:flex-1">
+        <div id="details" className="lg:flex-1">
           <p>ActivityDetails</p>
         </div>
       </div>
