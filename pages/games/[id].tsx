@@ -7,7 +7,7 @@ interface IProps {
   id: string;
 }
 
-const games = (props: IProps) => {
+const game = (props: IProps) => {
   const { data } = useQuery(GET_GAME_DETAILS, { variables: { uuid: props.id } });
 
   if (!data) {
@@ -24,6 +24,6 @@ const games = (props: IProps) => {
 
 
 // forward query { id: id } as a props
-games.getInitialProps = ( ctx: NextPageContext ) => ctx.query;
+game.getInitialProps = ( ctx: NextPageContext ) => ctx.query;
 
-export default games;
+export default game;
