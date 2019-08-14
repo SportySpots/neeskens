@@ -1,4 +1,18 @@
 @tailwind base;
+
+.text-section {
+  h2 {
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  p {
+    @apply .mt-4;
+    @apply .mb-8;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
