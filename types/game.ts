@@ -1,11 +1,11 @@
-import { DateTime, UUID } from "./utils";
-import { User } from "./user";
-import { Sport } from "./sport";
-import { Spot } from "./spot";
+import { DateTime, UUID } from './utils';
+import { User } from './user';
+import { Sport } from './sport';
+import { Spot } from './spot';
 
 export interface Attendee {
   uuid: UUID;
-  status: "ATTENDING" | "DECLINED";
+  status: 'ATTENDING' | 'DECLINED';
   user: User;
 }
 

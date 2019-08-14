@@ -1,24 +1,24 @@
-import * as React from "react";
-import "../../scss/style.scss";
-import { useQuery } from "@apollo/react-hooks";
-import { NextPageContext } from "next";
-import GET_GAME_DETAILS from "../../GraphQL/Games/Queries/GET_GAME_DETAILS";
-import { Game } from "../../types/game";
-import Head from "next/head";
+import { useQuery } from '@apollo/react-hooks';
+import { NextPageContext } from 'next';
+import Head from 'next/head';
+import * as React from 'react';
+import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS';
+import '../../scss/style.scss';
+import { Game } from '../../types/game';
 
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import ActivityImage from "../../components/Activityimage";
-import ActivityDescription from "../../components/Activitydescription";
-import ActivityAttendees from "../../components/ActivityAttendees";
+import ActivityAttendees from '../../components/ActivityAttendees';
+import ActivityDescription from '../../components/Activitydescription';
+import ActivityImage from '../../components/Activityimage';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 
 interface IProps {
   id: string;
 }
 
-const game = (props: IProps) => {
+const gamePage = (props: IProps) => {
   const query = useQuery<{ game: Game }>(GET_GAME_DETAILS, {
-    variables: { uuid: props.id }
+    variables: { uuid: props.id },
   });
 
   if (!query.data || !query.data.game) {
@@ -52,6 +52,6 @@ const game = (props: IProps) => {
 };
 
 // forward query { id: id } as a props
-game.getInitialProps = (ctx: NextPageContext) => ctx.query;
+gamePage.getInitialProps = (ctx: NextPageContext) => ctx.query;
 
-export default game;
+export default gamePage;

@@ -14,7 +14,9 @@
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
     },
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "interface-name": false
   },
   "jsRules": {
     "max-line-length": {
@@ -25,6 +27,7 @@
     "no-console": {
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
-    }
+    },
+    "ordered-imports": false
   }
 }
