@@ -1,5 +1,4 @@
 import "../scss/style.scss";
-import '../scss/textSection.scss';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Conversion from '../components/Conversion';
