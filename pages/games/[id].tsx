@@ -9,14 +9,16 @@ interface IProps {
 }
 
 const game = (props: IProps) => {
-  const query = useQuery<Game>(GET_GAME_DETAILS, { variables: { uuid: props.id } });
-  const game = query.data;
+  const query = useQuery<{game: Game}>(GET_GAME_DETAILS, { variables: { uuid: props.id } });
 
-  if (!game) {
+  if (!query.data) {
     return (
       <div>Not found... {props.id}</div>
     );
   }
+
+  const game = query.data.game;
+
   return (
     <div>
       {game && JSON.stringify(game)}
