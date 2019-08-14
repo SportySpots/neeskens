@@ -8,7 +8,7 @@ const corsProxy = require('cors-anywhere');
 corsProxy.createServer({
   originWhitelist: [], // Allow all origins
   requireHeader: [],
-  removeHeaders: ['cookie', 'cookie2']
+  removeHeaders: ['cookie', 'cookie2'],
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
 });

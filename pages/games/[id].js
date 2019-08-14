@@ -8,7 +8,7 @@ const games = (props, ctx, ctxa) => {
   if (!data) {
     return (
       <div>Not found... {props.id}</div>
-    )
+    );
   }
   return (
     <div>

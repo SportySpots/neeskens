@@ -1,9 +1,8 @@
-import "../scss/style.scss";
+import '../scss/style.scss';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Conversion from '../components/Conversion';
 import Footer from '../components/Footer';
-
 
 const privacy = () => (
   <section id="privacy" className="">

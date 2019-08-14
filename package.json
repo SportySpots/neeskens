@@ -6,7 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "nodemon server/index.js",
-    "proxy": "node proxy.js"
+    "proxy": "node proxy.js",
+    "lint": "tslint -t stylish -p ."
   },
   "keywords": [],
   "author": "",
@@ -45,6 +46,9 @@
     "postcss-loader": "^3.0.0",
     "raw-loader": "^3.1.0",
     "sass-loader": "^7.2.0",
-    "tailwindcss": "^1.1.1"
+    "tailwindcss": "^1.1.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2"
   }
 }

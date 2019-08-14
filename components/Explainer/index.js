@@ -43,7 +43,7 @@ const Explainer = () => {
         </Card>
       </section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default Explainer;

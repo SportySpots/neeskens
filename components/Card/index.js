@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Card = React.forwardRef(({title, body, svg}, ref) => {
     return (
@@ -7,7 +7,7 @@ const Card = React.forwardRef(({title, body, svg}, ref) => {
             <h4 className="font-sans font-semibold text-2xl p-4">{title}</h4>
             <p className="font-sans text-lg leading-normal">{body}</p>
         </div>
-    )
+    );
 });
 
-export default Card
+export default Card;

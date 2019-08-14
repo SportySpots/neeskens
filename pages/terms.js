@@ -1,9 +1,8 @@
-import "../scss/style.scss";
+import '../scss/style.scss';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Conversion from '../components/Conversion';
 import Footer from '../components/Footer';
-
 
 const terms = () => (
   <section className="">
@@ -16,7 +15,6 @@ const terms = () => (
       <h2>Terms and conditions</h2>
 
       <p>Last updated: June 01, 2018</p>
-
 
       <p>These Terms and Conditions ("Terms", "Terms and Conditions") govern your relationship with
         SportySpots mobile application (the "Service") operated by SportySpots ("us", "we", or
@@ -31,7 +29,6 @@ const terms = () => (
 
       <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree
         with any part of the terms then you may not access the Service.</p>
-
 
       <h2>Content</h2>
 
@@ -52,7 +49,6 @@ const terms = () => (
         posting of your Content on or through the Service does not violate the privacy rights,
         publicity rights, copyrights, contract rights or any other rights of any person.</p>
 
-
       <h2>Accounts</h2>
 
       <p>When you create an account with us, you must provide us information that is accurate,
@@ -71,7 +67,6 @@ const terms = () => (
         entity other than you without appropriate authorization, or a name that is otherwise
         offensive, vulgar or obscene.</p>
 
-
       <h2>Intellectual Property</h2>
 
       <p>The Service and its original content (excluding Content provided by users), features and
@@ -79,7 +74,6 @@ const terms = () => (
         The Service is protected by copyright, trademark, and other laws of both the Netherlands and
         foreign countries. Our trademarks and trade dress may not be used in connection with any
         product or service without the prior written consent of SportySpots.</p>
-
 
       <h2>Links To Other Web Sites</h2>
 
@@ -96,7 +90,6 @@ const terms = () => (
       <p>We strongly advise you to read the terms and conditions and privacy policies of any
         third-party web sites or services that you visit.</p>
 
-
       <h2>Termination</h2>
 
       <p>We may terminate or suspend your account immediately, without prior notice or liability,
@@ -104,7 +97,6 @@ const terms = () => (
 
       <p>Upon termination, your right to use the Service will immediately cease. If you wish to
         terminate your account, you may simply discontinue using the Service.</p>
-
 
       <h2>Limitation Of Liability</h2>
 
@@ -119,7 +111,6 @@ const terms = () => (
         damage, and even if a remedy set forth herein is found to have failed of its essential
         purpose.</p>
 
-
       <h2>Disclaimer</h2>
 
       <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS
@@ -132,7 +123,6 @@ const terms = () => (
         b) any errors or defects will be corrected; c) the Service is free of viruses or other
         harmful components; or d) the results of using the Service will meet your requirements.</p>
 
-
       <h2>Governing Law</h2>
 
       <p>These Terms shall be governed and construed in accordance with the laws of Netherlands,
@@ -144,7 +134,6 @@ const terms = () => (
         These Terms constitute the entire agreement between us regarding our Service, and supersede
         and replace any prior agreements we might have between us regarding the Service.</p>
 
-
       <h2>Changes</h2>
 
       <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time.
@@ -155,7 +144,6 @@ const terms = () => (
       <p>By continuing to access or use our Service after those revisions become effective, you
         agree to be bound by the revised terms. If you do not agree to the new terms, please stop
         using the Service.</p>
-
 
       <h2>Contact Us</h2>
 
