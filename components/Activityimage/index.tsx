@@ -1,5 +1,5 @@
-import React from "react";
-import { Game } from "../../types/game";
+import React from 'react';
+import { Game } from '../../types/game';
 
 interface IProps {
   game: Game;

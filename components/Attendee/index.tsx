@@ -1,5 +1,5 @@
-import React from "react";
-import { User } from "../../types/user";
+import React from 'react';
+import { User } from '../../types/user';
 
 interface IProps {
   user: User;

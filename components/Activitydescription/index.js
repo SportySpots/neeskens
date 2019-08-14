@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ActivityDescription = () => {
     return (
@@ -6,7 +6,7 @@ const ActivityDescription = () => {
             <h2 className="pb-4">Description</h2>
             <p>laksjlkajdlkasjdlkajsdlkjaslkdjlaksjdlkasjdlkajslkjalkjdlkasj</p>
         </div>
-    )
-}
+    );
+};
 
-export default ActivityDescription
+export default ActivityDescription;
