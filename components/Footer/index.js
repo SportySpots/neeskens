@@ -10,6 +10,8 @@ class Footer extends Component {
                         ❤️
                     </span>{' '}
                     in Amsterdam
+                    {' '}| <a href="/privacy">Privacy policy</a>
+                    {' '}| <a href="/terms">Terms and conditions</a>
                 </p>
             </section>
         )
