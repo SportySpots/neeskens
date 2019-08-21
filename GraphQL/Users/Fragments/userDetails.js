@@ -1,22 +1,22 @@
-import gql from 'graphql-tag';
-import spotFragment from '../../Spots/Fragments/spot';
+import gql from 'graphql-tag'
+import spotFragment from '../../Spots/Fragments/spot'
 
 const userDetailsFragment = gql`
-  fragment userDetailsFragment on UserType {
-    uuid
-    name
-    profile {
-      uuid
-      id
-      year_of_birth
-      avatar
-      spots {
-        ...spotFragment
-      }
-      #country
+    fragment userDetailsFragment on UserType {
+        uuid
+        name
+        profile {
+            uuid
+            id
+            year_of_birth
+            avatar
+            spots {
+                ...spotFragment
+            }
+            #country
+        }
     }
-  }
-  ${spotFragment}
-`;
+    ${spotFragment}
+`
 
-export default userDetailsFragment;
+export default userDetailsFragment

@@ -1,13 +1,13 @@
-import gql from 'graphql-tag';
-import spotDetailsFragment from '../Fragments/spotDetails';
+import gql from 'graphql-tag'
+import spotDetailsFragment from '../Fragments/spotDetails'
 
 const GET_SPOT_DETAILS = gql`
-  query spot($uuid: UUID!) {
-    spot(uuid: $uuid) {
-      ...spotDetailsFragment
+    query spot($uuid: UUID!) {
+        spot(uuid: $uuid) {
+            ...spotDetailsFragment
+        }
     }
-  }
-  ${spotDetailsFragment}
-`;
+    ${spotDetailsFragment}
+`
 
-export default GET_SPOT_DETAILS;
+export default GET_SPOT_DETAILS

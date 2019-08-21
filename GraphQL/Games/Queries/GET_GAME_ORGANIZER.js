@@ -1,13 +1,13 @@
-import gql from 'graphql-tag';
-import gameOrganizerFragment from '../Fragments/gameOrganizer';
+import gql from 'graphql-tag'
+import gameOrganizerFragment from '../Fragments/gameOrganizer'
 
 const GET_GAME_ORGANIZER = gql`
-  query game($uuid: UUID!) {
-    game(uuid: $uuid) {
-      ...gameOrganizerFragment
+    query game($uuid: UUID!) {
+        game(uuid: $uuid) {
+            ...gameOrganizerFragment
+        }
     }
-  }
-  ${gameOrganizerFragment}
-`;
+    ${gameOrganizerFragment}
+`
 
-export default GET_GAME_ORGANIZER;
+export default GET_GAME_ORGANIZER
