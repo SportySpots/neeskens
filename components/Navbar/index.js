@@ -19,14 +19,14 @@ class Navbar extends Component {
                         <img
                             src="/static/Appstore.svg"
                             alt="AppImage"
-                            className="h-8 lg:h-10 mr-2 lg:mr-4"
+                            className="hidden lg:block  h-8 lg:h-10 mr-2 lg:mr-4"
                         />
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.sportyspots.android">
                         <img
                             src="/static/Playstore.svg"
                             alt="AppImage"
-                            className="h-8 lg:h-10 mr-2 lg:mr-8"
+                            className="hidden lg:block  h-8 lg:h-10 mr-2 lg:mr-8"
                         />
                     </a>
                 </div>
