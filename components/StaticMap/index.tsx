@@ -40,7 +40,7 @@ const StaticMap = (props: IProps) => {
     if (props.withLink !== false) {
         const linkHref = `https://www.google.com/maps/place/${props.coords.lat},${props.coords.lng}`
         return (
-            <a className={props.className} href={linkHref}>
+            <a target="_blank" className={props.className} href={linkHref}>
                 {ImgComp}
             </a>
         )
