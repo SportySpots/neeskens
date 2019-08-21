@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import Logo from '../Logo'
 
-
 class Navbar extends Component {
     constructor(props) {
         super(props)
         this.props = props
     }
 
-    render() {  
+    render() {
         return (
             <section className="flex items-center justify-between p-4 pl-8 bg-chalk border-b border-concrete-100 w-full fixed z-10 top-0 ">
                 <Logo />
                 <div className="flex flex-row items-center">
-                <p className="hidden lg:block font-sans text-xs lg:text-lg mr-4">Download the app</p>
+                    <p className="hidden lg:block font-sans text-xs lg:text-lg mr-4">
+                        Download the app
+                    </p>
                     <a href="https://itunes.apple.com/nl/app/sportyspots/id1391625376">
                         <img
                             src="/static/Appstore.svg"
