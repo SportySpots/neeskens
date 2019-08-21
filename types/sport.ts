@@ -1,1 +1,1 @@
-export type Sport = any;
+export type Sport = any

@@ -1,2 +1,2 @@
-import Index from './index';
-export default Index;
+import Index from './index'
+export default Index

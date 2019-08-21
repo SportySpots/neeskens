@@ -1,14 +1,14 @@
-import { UUID } from './utils';
+import { UUID } from './utils'
 
 export interface UserProfile {
-  id: string;
-  uuid: UUID;
-  avatar: string;
+    id: string
+    uuid: UUID
+    avatar: string
 }
 
 export interface User {
-  id: string;
-  uuid: UUID;
-  name: string;
-  profile: UserProfile;
+    id: string
+    uuid: UUID
+    name: string
+    profile: UserProfile
 }

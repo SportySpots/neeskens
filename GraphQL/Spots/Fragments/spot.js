@@ -1,28 +1,28 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const spotFragment = gql`
-  fragment spotFragment on SpotType {
-    uuid
-    name
-    images {
-      uuid
-      image
+    fragment spotFragment on SpotType {
+        uuid
+        name
+        images {
+            uuid
+            image
+        }
+        address {
+            uuid
+            lat
+            lng
+        }
+        sports {
+            uuid
+            category
+        }
+        games {
+            uuid
+            start_time
+            status
+        }
     }
-    address {
-      uuid
-      lat
-      lng
-    }
-    sports {
-      uuid
-      category
-    }
-    games {
-      uuid
-      start_time
-      status
-    }
-  }
-`;
+`
 
-export default spotFragment;
+export default spotFragment

@@ -1,12 +1,12 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 const sportFragment = gql`
-  fragment sportFragment on SportType {
-    uuid
-    id
-    name
-    category
-  }
-`;
+    fragment sportFragment on SportType {
+        uuid
+        id
+        name
+        category
+    }
+`
 
-export default sportFragment;
+export default sportFragment

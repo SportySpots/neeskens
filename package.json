@@ -7,7 +7,8 @@
     "build": "next build",
     "dev": "nodemon server/index.js",
     "proxy": "node proxy.js",
-    "lint": "tslint -t stylish -p ."
+    "lint": "tslint -t stylish -p .",
+    "autoformat": "prettier --write '{components,pages,effects,lib,types,GraphQL}/**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [],
   "author": "",
