@@ -19,10 +19,10 @@ const Conversion = () => {
         <section className="bg-concrete-100 container min-w-full pt-4 lg:pt-8">
             <div className="flex flex-col lg:flex-row xxl:pl-64 xl:pl-40 lg:pl-40">
                 <div className="flex flex-col flex-1 lg:mt-32">
-                    <h2 className="font-sans text-center md:text-left lg:text-left text-5xl mt-8">
+                    <h2 className="font-sans text-center md:text-center lg:text-left text-5xl mt-8">
                         Download the app
                     </h2>
-                    <h3 className="font-sans text-center md:text-left lg:text-left text-2xl lg:text-2xl mt-4 px-4 lg:px-0">
+                    <h3 className="font-sans text-center md:text-center lg:text-left text-2xl lg:text-2xl mt-4 px-4 lg:px-0">
                         We believe that sports is a universal language that
                         unites people and everybody should be able to play a
                         game of sports.
