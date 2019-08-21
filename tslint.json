@@ -1,5 +1,8 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
   "rules": {
     "max-line-length": {
       "options": [150]
@@ -9,7 +12,6 @@
     "no-bitwise": true,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": false,
-    "quotemark": [true, "single", "jsx-double"],
     "no-console": {
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
@@ -22,7 +24,6 @@
     "max-line-length": {
       "options": [150]
     },
-    "quotemark": [true, "single", "jsx-double"],
     "object-literal-sort-keys": false,
     "no-console": {
       "severity": "warning",
