@@ -2,8 +2,9 @@ interface IProps {
     coords: {
         lat: number
         lng: number
-    },
+    }
     className?: string
+    withLink?: boolean
 }
 
 const StaticMap = (props: IProps) => {
@@ -28,7 +29,24 @@ const StaticMap = (props: IProps) => {
         .map(key => `${key}=${params[key]}`)
         .join('&')
 
-    return <img className={props.className} alt="map" src={baseURL + '?' + queryString} />
+    const ImgComp = (
+        <img
+            className={props.className}
+            alt="map"
+            src={baseURL + '?' + queryString}
+        />
+    )
+
+    if (props.withLink !== false) {
+        const linkHref = `https://www.google.com/maps/place/${props.coords.lat},${props.coords.lng}`
+        return (
+            <a className={props.className} href={linkHref}>
+                {ImgComp}
+            </a>
+        )
+    }
+
+    return ImgComp
 }
 
 export default StaticMap
