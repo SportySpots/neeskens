@@ -1,4 +1,4 @@
-import React from './node_modules/react'
+import * as React from 'react'
 import { Game } from '../../types/game'
 import Attendee from '../Attendee'
 
