@@ -37,7 +37,7 @@ const gamePage = (props: IProps) => {
                 <title>SportySpots - gratis sporten in je stad</title>
             </Head>
             <Navbar />
-            <div className="flex flex-col lg:flex-row-reverse">
+            <div className="flex flex-col lg:flex-row-reverse pt-16">
                 <div className="mt-8 lg:my-8 lg:mr-32 lg:w-2/5">
                     <ActivityDetails game={game} />
                     <DownloadApp />

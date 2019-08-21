@@ -10,7 +10,7 @@ class Navbar extends Component {
 
     render() {  
         return (
-            <section className="flex items-center justify-between p-4 pl-8 bg-chalk border-b border-concrete-100  ">
+            <section className="flex items-center justify-between p-4 pl-8 bg-chalk border-b border-concrete-100 w-full fixed z-10 top-0 ">
                 <Logo />
                 <div className="flex flex-row items-center">
                 <p className="hidden lg:block font-sans text-xs lg:text-lg mr-4">Download the app</p>
