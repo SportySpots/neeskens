@@ -1,25 +1,27 @@
 import * as React from 'react'
+import { Sport } from '../../types/sport';
 
 interface IProps {
-    sport: string
+    sport: Sport
     className: string
 }
 
-const sportToFilename: { [key: string]: string } = {
-    basketball: 'basketball.png',
-    beach_volleyball: 'beach_volleyball.png',
-    soccer: 'soccer.png',
-    boules: 'boules.png',
-    skating: 'skating.png',
-    table_tennis: 'table_tennis.png',
-    tennis: 'tennis.png',
-    bootcamp: 'bootcamp.png',
+const sportCategoryToFilename: { [key: string]: string } = {
+    BASKETBALL: 'basketball.png',
+    BEACH_VOLLEYBALL: 'beach_volleyball.png',
+    SOCCER: 'soccer.png',
+    BOULES: 'boules.png',
+    SKATING: 'skating.png',
+    TABLE_TENNIS: 'table_tennis.png',
+    TENNIS: 'tennis.png',
+    BOOTCAMP: 'bootcamp.png',
 }
 
-const defaultSport = 'soccer'
+const defaultSport = 'SOCCER'
 
 const SportIcon = ({ sport, className }: IProps) => {
-    const iconFilename = sportToFilename[sport] || sportToFilename[defaultSport]
+    const sportCategory = sport.category;
+    const iconFilename = sportCategoryToFilename[sportCategory] || sportCategoryToFilename[defaultSport]
     return (
         <img
             className={className}
