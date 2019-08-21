@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalVideo from 'react-modal-video';
-import HeroImage from '../Heroimage';
-import PlayImage from '../Playimage';
+import HeroImage from '../HeroImage';
+import PlayImage from '../PlayImage';
 
 class Hero extends React.Component {
 

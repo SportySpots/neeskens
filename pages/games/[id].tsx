@@ -1,16 +1,17 @@
-import { useQuery } from '@apollo/react-hooks';
-import { NextPageContext } from 'next';
-import Head from 'next/head';
-import * as React from 'react';
-import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS';
-import '../../scss/style.scss';
-import { Game } from '../../types/game';
+import { useQuery } from "@apollo/react-hooks";
+import { NextPageContext } from "next";
+import Head from "next/head";
+import * as React from "react";
+import GET_GAME_DETAILS from "../../GraphQL/Games/Queries/GET_GAME_DETAILS";
+import "../../scss/style.scss";
+import { Game } from "../../types/game";
 
-import ActivityAttendees from '../../components/ActivityAttendees';
-import ActivityDescription from '../../components/Activitydescription';
-import ActivityImage from '../../components/Activityimage';
-import Footer from '../../components/Footer';
-import Navbar from '../../components/Navbar';
+import ActivityDetails from "../../components/ActivityDetails";
+import ActivityAttendees from "../../components/ActivityAttendees";
+import ActivityDescription from "../../components/ActivityDescription";
+import ActivityImage from "../../components/ActivityImage";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 interface IProps {
   id: string;
@@ -18,7 +19,7 @@ interface IProps {
 
 const gamePage = (props: IProps) => {
   const query = useQuery<{ game: Game }>(GET_GAME_DETAILS, {
-    variables: { uuid: props.id },
+    variables: { uuid: props.id }
   });
 
   if (!query.data || !query.data.game) {
@@ -36,10 +37,10 @@ const gamePage = (props: IProps) => {
       </Head>
       <Navbar />
       <div className="flex flex-col lg:flex-row-reverse">
-        <div className="mx-4 my-8 lg:mr-48 lg:ml-16 lg:w-1/4">
-          <p>ActivityDetails</p>
+        <div className="my-8 lg:mr-32 lg:w-2/5">
+          <ActivityDetails game={game} />
         </div>
-        <div className="mx-4 my-8 lg:ml-48 lg:mr-16 lg:w-3/4 flex flex-col">
+        <div className="mx-2 my-8 lg:ml-32 lg:mr-16 lg:w-3/5 flex flex-col">
           <ActivityImage game={game} />
           <ActivityDescription game={game} />
           <ActivityAttendees game={game} />

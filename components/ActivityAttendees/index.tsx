@@ -1,6 +1,6 @@
-import React from 'react';
-import { Game } from '../../types/game';
-import Attendee from '../../components/Attendee';
+import React from "./node_modules/react";
+import { Game } from "../../types/game";
+import Attendee from "../Attendee";
 
 interface IProps {
   game: Game;
@@ -12,8 +12,8 @@ const ActivityAttendees = ({ game }: IProps) => {
       <h2 className="pb-4">Attendees</h2>
       <ul>
         {game.attendees
-          .filter((attendee) => attendee.status === 'ATTENDING')
-          .map((attendee) => (
+          .filter(attendee => attendee.status === "ATTENDING")
+          .map(attendee => (
             <li className="mb-4" key={attendee.uuid}>
               <Attendee user={attendee.user} />
             </li>
