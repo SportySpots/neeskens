@@ -18,7 +18,7 @@ class Hero extends React.Component {
 
     render() {
         return (
-            <section className=" container min-w-full pt-8 lg:pt-16">
+            <section className=" container min-w-full pt-8 lg:pt-32 pt-24">
                 <div className="z-10 flex flex-col lg:flex-row xxl:pl-64 xl:pl-40 lg:pl-40">
                     <div className="flex-row">
                         <h1
