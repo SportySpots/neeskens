@@ -1,5 +1,6 @@
 import React from 'react'
 import { Game } from '../../types/game'
+
 import SportIcon from '../SportIcon'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import WatchLater from '@material-ui/icons/WatchLater'
@@ -39,7 +40,21 @@ const ActivityDetails = ({ game }: IProps) => {
                 </div>
             </div>
             <StaticMap className="w-full" coords={game.spot.address} />
-            <div className="p-8 mb-8"></div>
+            <div className="p-8 mb-8">
+                <h3 className="font-sans font-medium text-2xl pb-4">
+                    Hosted by
+                </h3>
+                <div className="flex flex-row items-center">
+                    <img
+                        className="rounded-full h-16 w-16 object-cover"
+                        src={game.organizer.profile.avatar}
+                        alt="avatar"
+                    />
+                    <p className="font-sans ml-4 text-lg font-medium">
+                        {game.organizer.name}
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }

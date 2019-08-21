@@ -2,7 +2,7 @@ import * as React from 'react'
 
 interface IProps {
     sport: string
-    className: string
+    className?: string
 }
 
 const sportToFilename: { [key: string]: string } = {

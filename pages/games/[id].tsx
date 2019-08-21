@@ -10,6 +10,7 @@ import ActivityDetails from '../../components/ActivityDetails'
 import ActivityAttendees from '../../components/ActivityAttendees'
 import ActivityDescription from '../../components/ActivityDescription'
 import ActivityImage from '../../components/ActivityImage'
+import DownloadApp from '../../components/DownloadApp'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 
@@ -39,6 +40,7 @@ const gamePage = (props: IProps) => {
             <div className="flex flex-col lg:flex-row-reverse">
                 <div className="mt-8 lg:my-8 lg:mr-32 lg:w-2/5">
                     <ActivityDetails game={game} />
+                    <DownloadApp />
                 </div>
                 <div className="mt-8 mx-2 lg:my-8 lg:ml-32 lg:mr-16 lg:w-3/5 flex flex-col">
                     <ActivityImage game={game} />
