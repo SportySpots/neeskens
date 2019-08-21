@@ -1,5 +1,7 @@
 import React from 'react'
 import { Game } from '../../types/game'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import WatchLater from '@material-ui/icons/WatchLater'
 
 interface IProps {
     game: Game
@@ -11,15 +13,14 @@ const ActivityDetails = ({ game }: IProps) => {
             <h2 className="pb-4">{game.name}</h2>
             <div>
                 <div>
-                    <icon />
                     <p>Hier komen details</p>
                 </div>
                 <div>
-                    <icon />
+                    <WatchLater />
                     <p>Hier komen details</p>
                 </div>
                 <div>
-                    <icon />
+                    <LocationOnIcon />
                     <p>Hier komen details</p>
                 </div>
             </div>
