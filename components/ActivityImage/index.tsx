@@ -19,7 +19,7 @@ const ActivityImage = ({ game }: IProps) => {
     return (
         <div className="rounded-lg shadow mb-8 ">
             <div className="absolute rounded-br-lg rounded-tl-lg bg-notify-100 w-24">
-                <p className="py-2 px-4 text-xl font-bold text-chalk text-center">
+                <p className="font-sans py-2 px-4 text-2xl font-medium text-chalk text-center">
                     {localStartTime.format('MMMM Do')}
                 </p>
             </div>

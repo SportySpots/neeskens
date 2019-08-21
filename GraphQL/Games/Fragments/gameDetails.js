@@ -51,6 +51,7 @@ const gameDetailsFragment = gql`
                 uuid
                 lat
                 lng
+                formatted_address
             }
         }
         organizer {

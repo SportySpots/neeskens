@@ -1,27 +1,38 @@
 import React from 'react'
 import { Game } from '../../types/game'
+import SportIcon from '../SportIcon'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import WatchLater from '@material-ui/icons/WatchLater'
+
+import moment from 'moment'
+import 'moment-timezone'
 
 interface IProps {
     game: Game
 }
 
 const ActivityDetails = ({ game }: IProps) => {
+    const localStartTime = moment(game.start_time).tz('CET')
+
     return (
         <div className="bg-chalk rounded-lg p-8 mb-8">
-            <h2 className="pb-4">{game.name}</h2>
+            <h2 className="font-sans text-3xl pb-8">{game.name}</h2>
             <div>
-                <div>
-                    <p>Hier komen details</p>
+                <div className="flex flex-row mb-8">
+                    <SportIcon className="mr-4" sport={game.sport} />
+                    <p className="font-sans text-xl">{game.sport.name}</p>
                 </div>
-                <div>
-                    <WatchLater />
-                    <p>Hier komen details</p>
+                <div className="flex flex-row mb-8">
+                    <WatchLater className="mr-4" />
+                    <p className="font-sans text-xl">
+                        {localStartTime.format('MMMM Do - HH:mm')}
+                    </p>
                 </div>
-                <div>
-                    <LocationOnIcon />
-                    <p>Hier komen details</p>
+                <div className="flex flex-row mb-8">
+                    <LocationOnIcon className="mr-4" />
+                    <p className="font-sans text-xl">
+                        {game.spot.address.formatted_address}
+                    </p>
                 </div>
             </div>
         </div>

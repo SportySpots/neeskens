@@ -13,7 +13,7 @@ const Attendee = ({ user }: IProps) => {
                 src={user.profile.avatar}
                 alt="avatar"
             />
-            <p className="ml-4 text-lg font-medium">{user.name}</p>
+            <p className="font-sans ml-4 text-lg font-medium">{user.name}</p>
         </div>
     )
 }
