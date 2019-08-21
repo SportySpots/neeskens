@@ -22,15 +22,15 @@ class Hero extends React.Component {
                 <div className="z-10 flex flex-col lg:flex-row xxl:pl-64 xl:pl-40 lg:pl-40">
                     <div className="flex-row">
                         <h1
-                            className="font-sans text-center md:text-left lg:text-left
+                            className="font-sans text-center md:text-center lg:text-left
                                  text-6xl xl:text-7xl lg:text-5xl md:text-5xl"
                         >
                             Play more sports
                         </h1>
-                        <h2 className="font-sans text-center md:text-left lg:text-left  text-2xl lg:text-3xl">
+                        <h2 className="font-sans text-center md:text-center lg:text-left  text-2xl lg:text-3xl">
                             Play sports with others in your city
                         </h2>
-                        <h3 className="font-sans text-center md:text-left lg:text-left  text-xl lg:text-xl mt-4">
+                        <h3 className="font-sans text-center md:text-center lg:text-left  text-xl lg:text-xl mt-4">
                             For iPhone and Android
                         </h3>
                     </div>
