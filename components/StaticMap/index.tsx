@@ -2,7 +2,8 @@ interface IProps {
     coords: {
         lat: number
         lng: number
-    }
+    },
+    className?: string
 }
 
 const StaticMap = (props: IProps) => {
@@ -27,7 +28,7 @@ const StaticMap = (props: IProps) => {
         .map(key => `${key}=${params[key]}`)
         .join('&')
 
-    return <img alt="map" src={baseURL + '?' + queryString} />
+    return <img className={props.className} alt="map" src={baseURL + '?' + queryString} />
 }
 
 export default StaticMap
