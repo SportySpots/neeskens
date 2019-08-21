@@ -21,8 +21,11 @@ const ActivityDetails = ({ game }: IProps) => {
             <div className="p-8">
                 <h2 className="font-sans text-3xl pb-8">{game.name}</h2>
                 <div>
-                    <div className="flex flex-row mb-8 h-6 w-6">
-                        <SportIcon className="mr-4" sport={game.sport} />
+                    <div className="flex flex-row mb-8">
+                        <SportIcon
+                            className="mr-4 h-6 w-6"
+                            sport={game.sport}
+                        />
                         <p className="font-sans text-xl">{game.sport.name}</p>
                     </div>
                     <div className="flex flex-row mb-8">

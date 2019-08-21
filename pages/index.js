@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 const Index = () => (
     <section className="container min-w-full">
         <Head>
-            <title>SportySpots - Laagdrempelig sporten in je stad</title>
+            <title>SportySpots - gratis sporten in je stad</title>
         </Head>
         <Navbar />
         <Hero />
