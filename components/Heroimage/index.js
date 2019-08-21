@@ -20,8 +20,8 @@ const HeroImage = () => {
     const shadowball3 = svg.querySelectorAll('#Ovalshadow3');
     TweenMax.to(shadowball3, 1, {scaleX: 1.1}).yoyo(true).repeat(-1).play();
 
-    // TweenLite.fromTo(svg.querySelector("#Mountain"), 2, { x: -100 }, { x: 0 });
-    // TweenLite.fromTo(svg.querySelector("#Mountain-2"), 2, { x: 100 }, { x: 0 });
+    TweenLite.fromTo(svg.querySelector("#Mountain"), 2, { x: -100 }, { x: 0 });
+    TweenLite.fromTo(svg.querySelector("#Mountain-2"), 2, { x: 100 }, { x: 0 });
   };
 
   React.useEffect(() => {
