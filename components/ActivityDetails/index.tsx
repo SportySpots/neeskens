@@ -54,6 +54,11 @@ const ActivityDetails = ({ game }: IProps) => {
                         {game.organizer.name}
                     </p>
                 </div>
+                <button className="flex justify-center items-center bg-grass-100 rounded-lg p-4 w-full mt-12 text-center hover:bg-darkgrass-100">
+                    <p className="font-sans text-chalk text-xl font-medium">
+                        Join activity
+                    </p>
+                </button>
             </div>
         </div>
     )
