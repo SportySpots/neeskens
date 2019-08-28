@@ -8,6 +8,7 @@ module.exports = withSass({
   env: {
     seedorfGraphQLUrl: 'https://api.sportyspots.com/graphql',
     googleMapsAPIKey: 'AIzaSyC99uVW_9nOJ32T7BY3Yeqt0iMWqOrGuAQ',
+    googleAnalyticsID: 'UA-110079868-1',
   },
 });
 
