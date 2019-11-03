@@ -9,9 +9,6 @@ class Filter extends Component {
                 
                 <div className="flex flex-row items-center">
                     <div className="mr-4" ><FilterButton /></div>
-                    <div className="mr-4" ><FilterButton /></div>
-                    <div className="mr-4" ><FilterButton /></div>
-                    <div className="mr-4" ><FilterButton /></div>
                 </div>
             </section>
         )
