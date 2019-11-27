@@ -1,0 +1,97 @@
+import React from 'react'
+import { Game } from '../../types/game'
+import Link from 'next/link'
+
+import SportIcon from '../SportIcon'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import WatchLater from '@material-ui/icons/WatchLater'
+
+import moment from 'moment'
+import 'moment-timezone'
+
+// import StaticMap from '../StaticMap'
+import { useQuery } from '@apollo/react-hooks'
+import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS'
+
+interface IProps {
+    gameID: string
+}
+
+const ActivityCardBig = ({ gameID }: IProps) => {
+    const gameQuery = useQuery<{ game: Game }>(GET_GAME_DETAILS, {
+        variables: { uuid: gameID },
+    })
+    if (gameQuery.loading) {
+        return <div>loading...</div>
+    }
+    if (!gameQuery.data) {
+        return <div>Not found...</div>
+    }
+    const game = gameQuery.data.game
+
+    const localStartTime = moment(game.start_time).tz('CET')
+
+    if (!game.spot) {
+        return null
+    }
+
+    const firstImage = game.spot.images[0]
+    if (!firstImage) {
+        return null
+    }
+
+    return (
+        <Link href="/games/[id]" as={`/games/${game.uuid}`}>
+            <div className="mx-8 my-8 bg-chalk rounded-lg flex shadow hover:shadow-lg cursor-pointer translate-y">
+                <div className="w-2/4">
+                    <div className="absolute rounded-br-lg rounded-tl-lg bg-notify-100 w-24">
+                        <p className="font-sans py-2 px-4 text-2xl font-medium text-chalk text-center">
+                            {localStartTime.format('MMMM Do')}
+                        </p>
+                    </div>
+                    <img
+                        className="w-full h-80 object-cover rounded-l-lg"
+                        src={firstImage.image}
+                        alt="activity image"
+                    ></img>
+                </div>
+                <div className="w-2/4 py-4 px-8">
+                    <h2 className="font-sans text-3xl pb-4">{game.name}</h2>
+                    <div>
+                        <div className="flex flex-row mb-4">
+                            <SportIcon
+                                sport={game.sport}
+                                className="mr-4 h-5 w-5"
+                            />
+                            <p className="font-sans text-xl">
+                                {game.sport.name}
+                            </p>
+                        </div>
+                        <div className="flex flex-row mb-4">
+                            <WatchLater className="mr-4" />
+                            <p className="font-sans text-xl">
+                                {localStartTime.format('MMMM Do - HH:mm')}
+                            </p>
+                        </div>
+                        <div className="flex flex-row ">
+                            <LocationOnIcon className="mr-4 mb-8" />
+                            <p className="font-sans text-xl">
+                                {game.spot.address.formatted_address}
+                            </p>
+                        </div>
+                    </div>
+
+                    <a className="flex">
+                        <button className="flex justify-center items-center bg-grass-100 rounded-lg p-4 w-full text-center hover:bg-darkgrass-100">
+                            <p className="font-sans text-chalk text-xl font-medium">
+                                Join this activity
+                            </p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </Link>
+    )
+}
+
+export default ActivityCardBig

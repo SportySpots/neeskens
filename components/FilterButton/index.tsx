@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { MdExpandMore, MdLocationOn } from 'react-icons/md'
 import { useTransition, animated } from 'react-spring'
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 interface IProps {
     options: Record<string, string>
@@ -11,9 +12,14 @@ interface IProps {
 }
 
 function FilterButton({ placeholder, options, value, onChange, icon }: IProps) {
-    const [menuOpen, set] = useState(false)
+    const selfRef = React.createRef<HTMLDivElement>()
+    const [menuOpen, setMenuOpen] = useState(false)
 
-    const handleBtnClick = () => set(!menuOpen)
+    const handleBtnClick = () => setMenuOpen(!menuOpen)
+
+    useOnClickOutside(selfRef, () => {
+        setMenuOpen(false)
+    })
 
     const transitions = useTransition(menuOpen, null, {
         from: { opacity: 0, transform: 'translateY(-2%)' },
@@ -25,19 +31,24 @@ function FilterButton({ placeholder, options, value, onChange, icon }: IProps) {
 
     const setOption = (optionKey: string) => {
         onChange(optionKey)
-        set(false)
+        setMenuOpen(false)
     }
 
     const optionsContent = Object.entries(options).map(
-        ([optionKey, optionValue]) => (
-            <div
-                className="py-1 cursor-pointer bg-descriptive"
-                key={optionKey}
-                onClick={() => setOption(optionKey)}
-            >
-                {optionValue} {optionKey === value ? '(selected)' : ''}
-            </div>
-        )
+        ([optionKey, optionValue]) => {
+            const classNames =
+                'py-1 pl-4 pr-8 cursor-pointer bg-descriptive w-full ' +
+                (optionKey === value ? 'bg-silver-100' : '')
+            return (
+                <div
+                    className={classNames}
+                    key={optionKey}
+                    onClick={() => setOption(optionKey)}
+                >
+                    {optionValue}
+                </div>
+            )
+        }
     )
 
     let iconElement = <MdExpandMore />
@@ -53,18 +64,21 @@ function FilterButton({ placeholder, options, value, onChange, icon }: IProps) {
                 {selectedValue}
                 <div className="ml-2 self-center">{iconElement}</div>
             </button>
-            {transitions.map(
-                ({ item, key, props }) =>
-                    item && (
-                        <animated.div
-                            style={{ ...props }}
-                            className="mt-1 px-4 py-2 border rounded"
-                            key={key}
-                        >
-                            {optionsContent}
-                        </animated.div>
-                    )
-            )}
+            <div>
+                {transitions.map(
+                    ({ item, key, props }) =>
+                        item && (
+                            <animated.div
+                                ref={selfRef}
+                                style={{ ...props }}
+                                className="absolute bg-chalk mt-1 py-2 border rounded"
+                                key={key}
+                            >
+                                {optionsContent}
+                            </animated.div>
+                        )
+                )}
+            </div>
         </div>
     )
 }
