@@ -58,7 +58,7 @@ function FilterButton({ placeholder, options, value, onChange, icon }: IProps) {
     return (
         <div>
             <button
-                className="bg-transparent py-2 px-4 mr-4 border focus:outline-none rounded flex flex-row "
+                className="bg-transparent text-xs lg:text-base py-2 px-4 mr-4 border focus:outline-none rounded flex flex-row "
                 onClick={handleBtnClick}
             >
                 {selectedValue}
@@ -71,7 +71,7 @@ function FilterButton({ placeholder, options, value, onChange, icon }: IProps) {
                             <animated.div
                                 ref={selfRef}
                                 style={{ ...props }}
-                                className="absolute bg-chalk mt-1 py-2 border rounded"
+                                className="z-10 absolute bg-chalk mt-1 py-2 border rounded"
                                 key={key}
                             >
                                 {optionsContent}

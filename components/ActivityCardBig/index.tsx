@@ -42,20 +42,20 @@ const ActivityCardBig = ({ gameID }: IProps) => {
 
     return (
         <Link href="/games/[id]" as={`/games/${game.uuid}`}>
-            <div className="mx-8 my-8 bg-chalk rounded-lg flex shadow hover:shadow-lg cursor-pointer translate-y">
-                <div className="w-2/4">
-                    <div className="absolute rounded-br-lg rounded-tl-lg bg-notify-100 w-24">
+            <div className="mx-8 my-8 bg-chalk rounded-lg flex flex-col lg:flex-row shadow hover:shadow-lg cursor-pointer translate-y">
+                <div className="lg:w-2/4">
+                    <div className="absolute z-0 rounded-tl-lg lg:rounded-br-lg lg:rounded-tl-lg bg-notify-100 w-24">
                         <p className="font-sans py-2 px-4 text-2xl font-medium text-chalk text-center">
                             {localStartTime.format('MMMM Do')}
                         </p>
                     </div>
                     <img
-                        className="w-full h-80 object-cover rounded-l-lg"
+                        className="w-full h-80 object-cover lg:rounded-l-lg rounded-tl-lg"
                         src={firstImage.image}
                         alt="activity image"
                     ></img>
                 </div>
-                <div className="w-2/4 py-4 px-8">
+                <div className="lg:w-2/4 py-4 px-8">
                     <h2 className="font-sans text-3xl pb-4">{game.name}</h2>
                     <div>
                         <div className="flex flex-row mb-4">
@@ -73,7 +73,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                                 {localStartTime.format('MMMM Do - HH:mm')}
                             </p>
                         </div>
-                        <div className="flex flex-row ">
+                        <div className="flex flex-row mb-4 ">
                             <LocationOnIcon className="mr-4 mb-8" />
                             <p className="font-sans text-xl">
                                 {game.spot.address.formatted_address}

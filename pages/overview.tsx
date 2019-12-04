@@ -7,6 +7,7 @@ import ActivityCardBig from '../components/ActivityCardBig'
 import { useQuery } from 'react-apollo'
 import GET_GAMES_LIST from '../GraphQL/Games/Queries/GET_GAMES_LIST'
 import { Game } from '../types/game'
+import LoadMore from '../components/LoadMore'
 
 // import Footer from '../components/Footer';
 
@@ -29,6 +30,7 @@ const Overview = () => {
             {games.map(game => (
                 <ActivityCardBig key={game.uuid} gameID={game.uuid} />
             ))}
+            <LoadMore />
             {/* <Footer /> */}
         </section>
     )
