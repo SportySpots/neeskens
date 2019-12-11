@@ -6,7 +6,21 @@ import 'leaflet.markercluster';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import { TypedEvent } from "../../lib/TypedEvent";
 
+
+class MyLocationControl extends L.Control {
+    onAdd(map: L.Map) {
+        const img = L.DomUtil.create('img') as HTMLImageElement;
+        img.src = '/static/location_searching.svg';
+        img.style.width = '50px';
+        img.style.backgroundColor = 'white';
+        img.addEventListener('click', () => {
+            map.locate({setView: true, maxZoom: 16})
+        })
+        return img;
+    }
+}
 
 const defaultIcon = new L.Icon({
     // iconUrl: 'https://image.flaticon.com/icons/png/512/37/37134.png',
@@ -48,17 +62,31 @@ class SpotsMapController {
     public map: L.Map;
     public tileLayer: L.TileLayer;
     public markersLayerGroup: L.MarkerClusterGroup;
-    public gpsMarker: L.CircleMarker;
+    public gpsMarker: L.CircleMarker | undefined;
+    public onMove = new TypedEvent<{
+        center: L.LatLng;
+        distance: number;
+    }>();
+
     constructor(container: HTMLElement | null) {
         this.map = new L.Map(container || 'test', {
             minZoom: 5,
             maxZoom: 18,
-        }).setView([52.370216, 4.895168], 13)
+        })
+                .setView([52.370216, 4.895168], 13)
+                .locate({setView: true, maxZoom: 16})
+                .on('moveend', this.moveHandler.bind(this))
+
+        const locationControl = new MyLocationControl({
+          position: 'topleft',
+        });
+        locationControl.addTo(this.map)
 
         this.tileLayer = new L.TileLayer(tilemapURL, {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
             maxZoom: 18,
         }).addTo(this.map);
+
         this.markersLayerGroup = L.markerClusterGroup({
             spiderfyOnMaxZoom: false,
             showCoverageOnHover: false,
@@ -67,21 +95,26 @@ class SpotsMapController {
             animateAddingMarkers: false
         }).addTo(this.map);
 
-        this.gpsMarker = new L.CircleMarker([52.370216, 4.895168], { radius: 10 }).addTo(this.map);
-        // L.circle(e.latlng, radius).addTo(map);
+        this.map.on('locationfound', (e) => {
+            if (!this.gpsMarker) {
+                this.gpsMarker = new L.CircleMarker(e.latlng, { radius: 10 }).addTo(this.map);
+            } else {
+                this.gpsMarker.setLatLng(e.latlng);
+            }
+        });
+
     }
 
-    public setGPSMarkerPosition(coords: Coords) {
-        this.gpsMarker.setLatLng([coords.lat, coords.lng]);
-    }
-
-    public sendMoveMessage() {
+    public moveHandler() {
         const center = this.map.getCenter();
         const bounds = this.map.getBounds();
         const nw = bounds.getNorthWest();
-        const se = bounds.getSouthEast();
+        // const se = bounds.getSouthEast();
         const maxDistance = this.map.distance(center, nw);
-        console.log(se, maxDistance);
+        this.onMove.emit({
+            distance: maxDistance,
+            center: center
+        })
     }
 
     public onMarkerClick(marker: IDMarker) {
