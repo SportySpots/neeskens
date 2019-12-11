@@ -11,7 +11,16 @@
           ]
         }
       }
-    ]
+    ],
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      ["module-resolver", {
+        "extensions": [".js", ".ios.js", ".android.js", "*.jsx", "*.ts", "*.tsx"],
+        "alias": {
+          "components": "./components",
+          "GraphQL": "./GraphQL",
+          "types": "./types"
+        }
+      }]
   ],
   "presets": ["next/babel"],
   "ignore": []
