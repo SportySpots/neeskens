@@ -34,6 +34,7 @@ gtag('config', '${process.env.googleAnalyticsID}');
         )}
       </Head>
       <body>
+      <div id="modal-container" />
       <Main/>
       <NextScript/>
       </body>
