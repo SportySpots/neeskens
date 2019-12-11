@@ -5,6 +5,8 @@ import { FilterProvider } from '../context/filters';
 import { ApolloProvider } from 'react-apollo'
 import Router from 'next/router';
 
+import '../scss/style.scss';
+
 class MyApp extends App {
   componentDidMount() {
     Router.onRouteChangeComplete = url => {
