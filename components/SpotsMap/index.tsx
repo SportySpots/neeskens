@@ -4,13 +4,16 @@ import SpotsMapController from "components/SpotsMap/controller";
 import { useQuery } from "@apollo/react-hooks";
 import { Spot } from "types/spot";
 import GET_SPOTS from "GraphQL/Spots/Queries/GET_SPOTS";
+import SpotCardSmall from "components/SpotCardSmall";
 
 const SpotsMap = () => {
     const mapContainer = React.useRef<HTMLDivElement>(null);
     const controllerRef = React.useRef<SpotsMapController | null>(null);
 
+    const [selectedMarker, setSelectedMarker] = React.useState<string | null>(null);
+
     const spotsQuery = useQuery<{ spots: Spot[] }>(GET_SPOTS, {
-        variables: { limit: 1000 },
+        variables: {limit: 1000},
     })
 
     React.useEffect(() => {
@@ -35,6 +38,8 @@ const SpotsMap = () => {
             });
         });
 
+        controller.onSelected.on(setSelectedMarker)
+
         return () => {
             // runs on onmount
             if (controller) {
@@ -46,8 +51,16 @@ const SpotsMap = () => {
     }, []);
 
 
-
-    return <div ref={mapContainer} className="h-full v-full"/>;
+    return (
+            <div className="h-full v-full">
+                <div ref={mapContainer} className="h-full v-full"/>
+                {selectedMarker && (
+                        <div className="absolute w-104 h-32 mb-8 mr-8 bottom-0 right-0 " style={{zIndex: 1000}}>
+                            <SpotCardSmall uuid={selectedMarker}/>
+                        </div>
+                )}
+            </div>
+    );
 }
 
 export default SpotsMap;

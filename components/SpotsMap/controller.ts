@@ -48,6 +48,7 @@ export interface MarkerData {
 
 class IDMarker extends L.Marker {
     public id: string;
+
     constructor(coords: Coords, id: string) {
         const options = {
             icon: defaultIcon,
@@ -68,6 +69,8 @@ class SpotsMapController {
         distance: number;
     }>();
 
+    public onSelected = new TypedEvent<string>();
+
     constructor(container: HTMLElement | null) {
         this.map = new L.Map(container || 'test', {
             minZoom: 5,
@@ -78,7 +81,7 @@ class SpotsMapController {
                 .on('moveend', this.moveHandler.bind(this))
 
         const locationControl = new MyLocationControl({
-          position: 'topleft',
+            position: 'topleft',
         });
         locationControl.addTo(this.map)
 
@@ -97,7 +100,7 @@ class SpotsMapController {
 
         this.map.on('locationfound', (e) => {
             if (!this.gpsMarker) {
-                this.gpsMarker = new L.CircleMarker(e.latlng, { radius: 10 }).addTo(this.map);
+                this.gpsMarker = new L.CircleMarker(e.latlng, {radius: 10}).addTo(this.map);
             } else {
                 this.gpsMarker.setLatLng(e.latlng);
             }
@@ -121,7 +124,7 @@ class SpotsMapController {
         try {
             this.markersLayerGroup.eachLayer((marker: any) => marker.setIcon(defaultIcon));
             marker.setIcon(selectedIcon);
-            // this.map.panTo(marker.getLatLng());
+            this.onSelected.emit(marker.id);
         } catch (e) {
             console.log(e);
         }
@@ -134,14 +137,14 @@ class SpotsMapController {
 
         // remove markers not in the new set
         currentMarkers.forEach(marker => {
-            if (newIDS.indexOf(marker.id) === -1) {
+            if (newIDS.indexOf(marker.id)=== -1) {
                 this.markersLayerGroup.removeLayer(marker);
             }
         });
 
         // add new markers
         newMarkers.forEach(marker => {
-            if (currentMarkerIDS.indexOf(marker.uuid) === -1) {
+            if (currentMarkerIDS.indexOf(marker.uuid)=== -1) {
                 this.addMarker(marker.coords, marker.uuid);
             }
         });
@@ -151,7 +154,9 @@ class SpotsMapController {
 
     public addMarker(coords: Coords, id: string) {
         const newMarker = new IDMarker(coords, id);
-        newMarker.on('click', (e) => { this.onMarkerClick(e.target); });
+        newMarker.on('click', (e) => {
+            this.onMarkerClick(e.target);
+        });
         newMarker.addTo(this.markersLayerGroup);
     }
 
