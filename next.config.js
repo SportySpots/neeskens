@@ -21,8 +21,8 @@ module.exports = withCss(withSass({
     // secondSecret: process.env.SECOND_SECRET, // Pass through env variables
   },
   env: {
-    seedorfGraphQLUrl: 'http://localhost:8080/https://api.sportyspots.com/graphql',
-    // seedorfGraphQLUrl: 'https://api.sportyspots.com/graphql',
+    // seedorfGraphQLUrl: 'http://localhost:8080/https://api.sportyspots.com/graphql',
+    seedorfGraphQLUrl: 'https://api.sportyspots.com/graphql',
     googleMapsAPIKey: 'AIzaSyC99uVW_9nOJ32T7BY3Yeqt0iMWqOrGuAQ',
     googleAnalyticsID: 'UA-110079868-1',
   },
