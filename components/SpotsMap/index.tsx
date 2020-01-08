@@ -5,6 +5,8 @@ import { useQuery } from "@apollo/react-hooks";
 import { Spot } from "types/spot";
 import GET_SPOTS from "GraphQL/Spots/Queries/GET_SPOTS";
 import SpotCardSmall from "components/SpotCardSmall";
+import { observer } from "mobx-react";
+import spotFiltersStore from "stores/SpotFilters";
 
 const SpotsMap = () => {
     const mapContainer = React.useRef<HTMLDivElement>(null);
@@ -13,7 +15,11 @@ const SpotsMap = () => {
     const [selectedMarker, setSelectedMarker] = React.useState<string | null>(null);
 
     const spotsQuery = useQuery<{ spots: Spot[] }>(GET_SPOTS, {
-        variables: {limit: 1000},
+        variables: {
+            limit: 1000,
+            // eslint-disable-next-line @typescript-eslint/camelcase
+            sports__ids: spotFiltersStore.selectedSportIds,
+        },
     })
 
     React.useEffect(() => {
@@ -63,4 +69,4 @@ const SpotsMap = () => {
     );
 }
 
-export default SpotsMap;
+export default observer(SpotsMap);

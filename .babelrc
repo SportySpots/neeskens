@@ -18,7 +18,8 @@
         "alias": {
           "components": "./components",
           "GraphQL": "./GraphQL",
-          "types": "./types"
+          "types": "./types",
+          "stores": "./stores"
         }
       }]
   ],

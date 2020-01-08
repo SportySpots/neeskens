@@ -1,7 +1,8 @@
 import { UUID } from './utils'
 
 export interface Sport {
-    name: string
-    category: string
-    uuid: UUID
+    name: string;
+    category: string;
+    uuid: UUID;
+    id: string;
 }

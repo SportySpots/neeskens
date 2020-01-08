@@ -20,10 +20,12 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "baseUrl": "./",
+        "experimentalDecorators": true,
         "paths": {
             "components/*": ["components/*"],
             "GraphQL/*": ["GraphQL/*"],
-            "types/*": ["types/*"]
+            "types/*": ["types/*"],
+            "stores/*": ["stores/*"]
         }
     },
     "exclude": ["node_modules"],
