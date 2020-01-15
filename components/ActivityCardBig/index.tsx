@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { Game } from '../../types/game'
 import Link from 'next/link'
@@ -46,6 +47,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
     const closeModal = () => setShow(false)
 
     return (
+        <>
         <Link href="/games/[id]" as={`/games/${game.uuid}`}>
             <a>
                 <div className="mx-8 my-8 bg-chalk rounded-lg flex flex-col lg:flex-row shadow hover:shadow-lg cursor-pointer translate-y">
@@ -100,11 +102,18 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                                 </p>
                             </button>
                         </div>
-                        {show && <Modal closeModal={closeModal} />}
                     </div>
                 </div>
             </a>
         </Link>
+        {show && <Modal closeModal={closeModal}>
+        <div>
+            <h2 className="font-sans text-night text-4xl font-medium">Join this activity</h2>
+            <p>here comes a first name last name input</p>
+            <p>here comes a email input</p>
+        </div>
+        </Modal>}
+        </>
     )
 }
 
