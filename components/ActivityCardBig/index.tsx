@@ -107,12 +107,20 @@ const ActivityCardBig = ({ gameID }: IProps) => {
             </a>
         </Link>
         {show && <Modal closeModal={closeModal}>
-        <div>
-            <h2 className="font-sans text-night text-4xl font-medium">Join this activity</h2>
-            <p>here comes a first name last name input</p>
-            <p>here comes a email input</p>
-        </div>
-        </Modal>}
+                <h2 className="font-sans text-night text-4xl mb-6">Join this activity</h2>
+                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
+                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
+                     Full Name
+                </label>
+                <input className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none focus:border-grass rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
+                </div>
+                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
+                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
+                     Email Address
+                </label>
+                <input className="appearance-none block w-full outline-none bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="email" placeholder="michael@jordan.com"></input>
+                </div>
+        </ Modal>}
         </>
     )
 }
