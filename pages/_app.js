@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app'
 import React from 'react'
 import withApolloClient from '../lib/with-apollo-client'
+import { FilterProvider } from '../context/filters';
 import { ApolloProvider } from 'react-apollo'
 import Router from 'next/router';
 
@@ -21,11 +22,11 @@ class MyApp extends App {
     const {Component, pageProps, apolloClient} = this.props
 
     return (
-      <Container>
         <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
+          <FilterProvider>
+            <Component {...pageProps} />
+          </FilterProvider>
         </ApolloProvider>
-      </Container>
     )
   }
 }
