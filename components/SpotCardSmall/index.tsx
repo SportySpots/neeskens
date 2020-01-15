@@ -13,7 +13,7 @@ const SpotCardSmall = (props: { uuid: string }) => {
     }
 
     const spot = spotQuery.data.spot;
-    const sportsHTMLString = spot.sports.map(sport => stripHTML(sport.category)).join(' &sdot; ');
+    const sportsHTMLString = spot.sports.map(sport => stripHTML(sport.name)).join(' &sdot; ');
 
     let imageSrc = '/static/icons/soccer.png';
     if (spot.images) {

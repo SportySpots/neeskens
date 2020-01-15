@@ -1,13 +1,17 @@
 module.exports = {
     "roots": [
-        "<rootDir>/src"
+        "<rootDir>"
     ],
     "testMatch": [
-        "**/__tests__/**/*.+(ts|tsx|js)",
+        "**/tests/**/*.+(ts|tsx|js)",
         "**/?(*.)+(spec|test).+(ts|tsx|js)"
     ],
     "transform": {
         "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"]
+    "globals": {
+        "__DEV__": true,
+        "rootDir": __dirname,
+    }
+    // "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"]
 };

@@ -23,8 +23,9 @@ const SpotsMap = () => {
     })
 
     React.useEffect(() => {
-        if (spotsQuery.data && controllerRef.current) {
-            controllerRef.current.setMarkers(spotsQuery.data.spots.map(
+        const controller = controllerRef.current;
+        if (spotsQuery.data && controller) {
+            controller.setMarkers(spotsQuery.data.spots.map(
                     spot => ({coords: spot.address, uuid: spot.uuid})
             ))
         }
@@ -58,14 +59,14 @@ const SpotsMap = () => {
 
 
     return (
-            <div className="h-full v-full">
-                <div ref={mapContainer} className="h-full v-full"/>
-                {selectedMarker && (
-                        <div className="absolute w-104 h-32 mb-8 mr-8 bottom-0 right-0 " style={{zIndex: 1000}}>
-                            <SpotCardSmall uuid={selectedMarker}/>
-                        </div>
-                )}
-            </div>
+        <div className="h-full v-full">
+            <div ref={mapContainer} className="h-full v-full"/>
+            {selectedMarker && (
+                <div className="absolute w-104 h-32 mb-8 mr-8 bottom-0 right-0 " style={{zIndex: 1000}}>
+                    <SpotCardSmall uuid={selectedMarker}/>
+                </div>
+            )}
+        </div>
     );
 }
 

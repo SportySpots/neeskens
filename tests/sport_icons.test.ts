@@ -11,7 +11,7 @@ describe('sport icons', () => {
     it('as many icons as sports', () => {
         expect(fs.readdirSync(sportIconsPath).length).toEqual(Sports.length);
     });
-    describe('exist for each sport', () => {
+    describe('exists for each sport', () => {
         Sports.forEach(sport => {
             const expectedFileName = path.join(sportIconsPath, sport.category.toLowerCase() + '.svg')
             it(`${sport.category} has an icon ${expectedFileName}`, () => {
