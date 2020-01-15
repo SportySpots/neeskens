@@ -2,7 +2,6 @@ import 'intersection-observer'
 import Head from 'next/head'
 import '../scss/style.scss'
 import Navbar from '../components/Navbar'
-import Filter from '../components/Filter'
 import ActivityCardBig from '../components/ActivityCardBig'
 import { useQuery } from 'react-apollo'
 import GET_GAMES_LIST from '../GraphQL/Games/Queries/GET_GAMES_LIST'
@@ -26,7 +25,6 @@ const Overview = () => {
                 <title>SportySpots - Sportactiviteiten</title>
             </Head>
             <Navbar />
-            <Filter />
             {games.map(game => (
                 <ActivityCardBig key={game.uuid} gameID={game.uuid} />
             ))}
