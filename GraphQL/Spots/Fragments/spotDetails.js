@@ -20,6 +20,7 @@ const spotDetailsFragment = gql`
         sports {
             uuid
             category
+            name
         }
         address {
             uuid

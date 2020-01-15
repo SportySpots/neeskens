@@ -29,13 +29,18 @@ export const addErrorHandlers = (link: ApolloLink) =>
         link,
     ])
 
+
+const DEFAULT_GRAPHQL_URL = process.env.NODE_ENV === 'production'
+    ? 'https://api.sportyspots.com/graphql'
+    : 'http://localhost:8080/https://api.sportyspots.com/graphql'
+
 const create = (initialState: {}) => {
     return new ApolloClient({
         connectToDevTools: !IS_SERVER,
         ssrMode: IS_SERVER,
         link: addErrorHandlers(
             createHttpLink({
-                uri: process.env.seedorfGraphQLUrl,
+                uri: process.env.seedorfGraphQLUrl || DEFAULT_GRAPHQL_URL,
                 credentials: 'same-origin',
                 fetch: (!IS_SERVER && fetch) as any,
             })

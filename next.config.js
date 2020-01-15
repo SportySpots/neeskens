@@ -15,11 +15,11 @@ module.exports = withCss(withSass({
 
     return config
   },
-  serverRuntimeConfig: {
+  // serverRuntimeConfig: {
     // Will only be available on the server side
     // mySecret: 'secret',
     // secondSecret: process.env.SECOND_SECRET, // Pass through env variables
-  },
+  // },
   env: {
     seedorfGraphQLUrl: 'http://localhost:8080/https://api.sportyspots.com/graphql',
     // seedorfGraphQLUrl: 'https://api.sportyspots.com/graphql',

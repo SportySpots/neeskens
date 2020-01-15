@@ -3,10 +3,10 @@ import { Game } from './game'
 import { Sport } from './sport'
 
 export interface Address {
-    uuid: UUID;
+    uuid?: UUID;
     lat: number;
     lng: number;
-    formatted_address: string;
+    formatted_address?: string;
 }
 
 export interface Image {

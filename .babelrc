@@ -19,7 +19,8 @@
           "components": "./components",
           "GraphQL": "./GraphQL",
           "types": "./types",
-          "stores": "./stores"
+          "stores": "./stores",
+          "lib": "./lib"
         }
       }]
   ],
