@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import '../scss/style.scss'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'

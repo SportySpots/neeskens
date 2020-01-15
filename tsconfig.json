@@ -18,7 +18,15 @@
         "forceConsistentCasingInFileNames": true,
         "esModuleInterop": true,
         "resolveJsonModule": true,
-        "isolatedModules": true
+        "isolatedModules": true,
+        "baseUrl": "./",
+        "experimentalDecorators": true,
+        "paths": {
+            "components/*": ["components/*"],
+            "GraphQL/*": ["GraphQL/*"],
+            "types/*": ["types/*"],
+            "stores/*": ["stores/*"]
+        }
     },
     "exclude": ["node_modules"],
     "include": [

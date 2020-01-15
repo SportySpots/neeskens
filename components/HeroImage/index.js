@@ -1,7 +1,7 @@
 import React from 'react'
 import { TweenLite, TweenMax } from 'gsap'
 
-import HeroImageSvg from '../../static/sportyspotsmainimage.svg'
+import HeroImageSvg from '../../public/static/sportyspotsmainimage.svg'
 
 const HeroImage = () => {
     const selfRef = React.createRef()

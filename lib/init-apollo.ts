@@ -9,9 +9,9 @@ const IS_SERVER = typeof window === 'undefined'
 import { ApolloLink } from 'apollo-link'
 import { onError } from 'apollo-link-error'
 
-let apolloClient = null
+let apolloClient: ApolloClient<{}> | null = null
 
-export const addErrorHandlers = link =>
+export const addErrorHandlers = (link: ApolloLink) =>
     ApolloLink.from([
         onError(({ graphQLErrors, networkError }) => {
             if (graphQLErrors) {
@@ -29,7 +29,7 @@ export const addErrorHandlers = link =>
         link,
     ])
 
-const create = initialState => {
+const create = (initialState: {}) => {
     return new ApolloClient({
         connectToDevTools: !IS_SERVER,
         ssrMode: IS_SERVER,
@@ -37,16 +37,16 @@ const create = initialState => {
             createHttpLink({
                 uri: process.env.seedorfGraphQLUrl,
                 credentials: 'same-origin',
-                fetch: !IS_SERVER && fetch,
+                fetch: (!IS_SERVER && fetch) as any,
             })
         ),
         cache: new InMemoryCache({
-            dataIdFromObject: object => object.uuid || null,
+            dataIdFromObject: object => (object as any).uuid || null,
         }).restore(initialState || {}),
     })
 }
 
-export default initialState => {
+export default (initialState: {}) => {
     if (!process.browser) {
         return create(initialState)
     }

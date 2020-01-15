@@ -1,9 +1,11 @@
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import React from 'react'
 import withApolloClient from '../lib/with-apollo-client'
 import { FilterProvider } from '../context/filters';
 import { ApolloProvider } from 'react-apollo'
 import Router from 'next/router';
+
+import '../scss/style.scss';
 
 class MyApp extends App {
   componentDidMount() {
@@ -17,6 +19,12 @@ class MyApp extends App {
       }
     };
   }
+
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log(props);
+  //   return state
+  // }
+
 
   render() {
     const {Component, pageProps, apolloClient} = this.props

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Logo from '../Logo'
+import Link from "next/link";
 
 class Navbar extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Navbar extends Component {
     render() {
         return (
             <section className="flex items-center justify-between p-4 pl-8 bg-chalk border-b border-concrete-100 lg:w-full lg:fixed lg:z-10 lg:top-0 ">
-                <a href="/"><Logo /></a>
+                <Link href="/"><a><Logo /></a></Link>
                 <div className="flex flex-row items-center">
                     <p className="hidden lg:block font-sans text-xs lg:text-lg mr-4">
                         Download the app
