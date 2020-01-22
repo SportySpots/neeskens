@@ -46,6 +46,8 @@ const ActivityCardBig = ({ gameID }: IProps) => {
     const openModal = () => setShow(true)
     const closeModal = () => setShow(false)
 
+
+
     return (
         <>
         <Link href="/games/[id]" as={`/games/${game.uuid}`}>
@@ -54,7 +56,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                     <div className="lg:w-2/4">
                         <div className="absolute z-0 rounded-tl-lg lg:rounded-br-lg lg:rounded-tl-lg bg-notify-100 w-24">
                             <p className="font-sans py-2 px-4 text-2xl font-medium text-chalk text-center">
-                                {localStartTime.format('MMMM Do')}
+                                {localStartTime.format('MMM Do')} 
                             </p>
                         </div>
                         <img
@@ -112,7 +114,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                  <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
                      Full Name
                 </label>
-                <input className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none focus:border-grass rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
+                <input className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
                 </div>
                 <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
                  <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
