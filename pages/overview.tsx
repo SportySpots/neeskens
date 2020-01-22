@@ -1,14 +1,11 @@
 import 'intersection-observer'
 import Head from 'next/head'
-import '../scss/style.scss'
 import Navbar from '../components/Navbar'
 import ActivityCardBig from '../components/ActivityCardBig'
 import { useQuery } from 'react-apollo'
 import GET_GAMES_LIST from '../GraphQL/Games/Queries/GET_GAMES_LIST'
 import { Game } from '../types/game'
 import LoadMore from '../components/LoadMore'
-
-// import Footer from '../components/Footer';
 
 const Overview = () => {
     const gamesQuery = useQuery<{ games: Game[] }>(GET_GAMES_LIST, {
