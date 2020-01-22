@@ -5,6 +5,12 @@ html, body, #__next {
     height: 100%;
 }
 
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
 h2 {
     @apply text-2xl;
     @apply font-medium;
@@ -26,6 +32,7 @@ h2 {
 .translate-y:hover {
     transform: translateY(-2px);
 }
+
 
 @tailwind components;
 @tailwind utilities;

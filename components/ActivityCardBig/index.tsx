@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { Game } from '../../types/game'
 import Link from 'next/link'
@@ -46,6 +47,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
     const closeModal = () => setShow(false)
 
     return (
+        <>
         <Link href="/games/[id]" as={`/games/${game.uuid}`}>
             <a>
                 <div className="mx-8 my-8 bg-chalk rounded-lg flex flex-col lg:flex-row shadow hover:shadow-lg cursor-pointer translate-y">
@@ -100,11 +102,26 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                                 </p>
                             </button>
                         </div>
-                        {show && <Modal closeModal={closeModal} />}
                     </div>
                 </div>
             </a>
         </Link>
+        {show && <Modal closeModal={closeModal}>
+                <h2 className="font-sans text-night text-4xl mb-6">Join this activity</h2>
+                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
+                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
+                     Full Name
+                </label>
+                <input className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none focus:border-grass rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
+                </div>
+                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
+                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
+                     Email Address
+                </label>
+                <input className="appearance-none block w-full outline-none bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="email" placeholder="michael@jordan.com"></input>
+                </div>
+        </ Modal>}
+        </>
     )
 }
 
