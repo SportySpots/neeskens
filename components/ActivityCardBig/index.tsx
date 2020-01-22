@@ -15,11 +15,15 @@ import 'moment-timezone'
 import { useQuery } from '@apollo/react-hooks'
 import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS'
 
-interface IProps {
-    gameID: string
+interface Props {
+    gameID: string;
 }
 
-const ActivityCardBig = ({ gameID }: IProps) => {
+const ActivityCardBig = ({ gameID }: Props) => {
+    const [show, setShow] = useState(false)
+    const openModal = () => setShow(true)
+    const closeModal = () => setShow(false)
+
     const gameQuery = useQuery<{ game: Game }>(GET_GAME_DETAILS, {
         variables: { uuid: gameID },
     })
@@ -33,18 +37,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
 
     const localStartTime = moment(game.start_time).tz('CET')
 
-    if (!game.spot) {
-        return null
-    }
-
-    const firstImage = game.spot.images[0]
-    if (!firstImage) {
-        return null
-    }
-
-    const [show, setShow] = useState(false)
-    const openModal = () => setShow(true)
-    const closeModal = () => setShow(false)
+    const imageURL = game.spot && game.spot.images ? game.spot.images[0].image : '/static/sportyspotsmainimage.svg'
 
     return (
         <>
@@ -59,20 +52,20 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                         </div>
                         <img
                             className="w-full h-80 object-cover lg:rounded-l-lg rounded-tl-lg"
-                            src={firstImage.image}
+                            src={imageURL}
                             alt="activity image"
-                        ></img>
+                        />
                     </div>
                     <div className="lg:w-2/4 py-4 px-8">
                         <h2 className="font-sans text-3xl pb-4">{game.name}</h2>
                         <div>
                             <div className="flex flex-row mb-4">
                                 <SportIcon
-                                    sport={game.sport}
+                                    sport={game.sport || ''}
                                     className="mr-4 h-5 w-5"
                                 />
                                 <p className="font-sans text-xl">
-                                    {game.sport.name}
+                                    {game.sport ? game.sport.name : '?'}
                                 </p>
                             </div>
                             <div className="flex flex-row mb-4">
@@ -84,7 +77,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                             <div className="flex flex-row mb-4 ">
                                 <LocationOnIcon className="mr-4 mb-8" />
                                 <p className="font-sans text-xl">
-                                    {game.spot.address.formatted_address}
+                                    {game.spot ? game.spot.address.formatted_address : '?'}
                                 </p>
                             </div>
                         </div>
