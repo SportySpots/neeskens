@@ -30,6 +30,7 @@ module.exports = {
       },
       grass: {
         100: '#009F36',
+        900: '#CCECD7',
       },
       darkgrass: {
         100: '#005537',

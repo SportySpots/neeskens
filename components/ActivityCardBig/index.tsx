@@ -114,7 +114,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                  <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
                      Full Name
                 </label>
-                <input className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
+                <input autoFocus className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
                 </div>
                 <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
                  <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >

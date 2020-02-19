@@ -14,7 +14,7 @@ interface SportButtonProps {
 }
 const SportButton = ({name, onClick, active}: SportButtonProps) => (
         <button
-                className={`${active?'bg-dusk':'bg-transparent'} text-xs lg:text-base py-2 px-4 mr-4 border focus:outline-none rounded flex flex-row`}
+                className={`${active?'border-grass-100 bg-grass-900':'bg-transparent'} text-xs lg:text-base py-2 px-4 mr-4 border focus:outline-none rounded flex flex-row`}
                 onClick={onClick}
         >
             {name}
@@ -47,7 +47,7 @@ const SportsFilterWide = () => {
                 />
             ))}
 
-            <button onClick={selectAll}>select all</button>
+            <button className="focus:outline-none" onClick={selectAll}>select all</button>
         </div>
     );
 }
