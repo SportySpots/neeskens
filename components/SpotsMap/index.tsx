@@ -14,12 +14,16 @@ const SpotsMap = () => {
 
     const [selectedMarker, setSelectedMarker] = React.useState<string | null>(null);
 
+    const spotsQueryVariables: Record<string, any> = {
+        limit: 1000,
+    }
+    if (spotFiltersStore.selectedSportIds.length > 0) {
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        spotsQueryVariables.sports__ids = spotFiltersStore.selectedSportIds;
+    }
+
     const spotsQuery = useQuery<{ spots: Spot[] }>(GET_SPOTS, {
-        variables: {
-            limit: 1000,
-            // eslint-disable-next-line @typescript-eslint/camelcase
-            sports__ids: spotFiltersStore.selectedSportIds,
-        },
+        variables: spotsQueryVariables
     })
 
     React.useEffect(() => {

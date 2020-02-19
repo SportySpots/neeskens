@@ -36,13 +36,8 @@ const SportsFilterWide = () => {
             spotFiltersStore.selectedSportIds = [...spotFiltersStore.selectedSportIds, id];
         }
     }
-    const selectAll = () => {
-        if (sports.data) {
-            spotFiltersStore.selectedSportIds =
-                spotFiltersStore.selectedSportIds.length===sports.data.sports.length
-                    ? []
-                    :sports.data.sports.map(sport => sport.id);
-        }
+    const removeAll = () => {
+        spotFiltersStore.selectedSportIds = [];
     }
     return (
         <div className="flex flex-row flex-wrap w-full">
@@ -55,7 +50,7 @@ const SportsFilterWide = () => {
                 />
             ))}
 
-            <button onClick={selectAll}>select all</button>
+            { spotFiltersStore.selectedSportIds.length > 0 && <button onClick={removeAll}>Remove filter</button> }
         </div>
     );
 }
