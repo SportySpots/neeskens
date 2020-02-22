@@ -16,7 +16,8 @@ const Overview = () => {
         // distance: `${parseInt(1000 * maxDistance, 10)}:${coords.latitude}:${coords.longitude}`,
         offset: 0,
         limit: PAGE_SIZE,
-        ordering: '-start_time'
+        ordering: '-start_time',
+        is_listed: true,
         // ordering: 'distance',
     };
     const gamesQuery = useQuery<{ games: Game[] }>(GET_GAMES_LIST, {

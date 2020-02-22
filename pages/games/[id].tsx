@@ -5,6 +5,7 @@ import * as React from 'react'
 import GET_GAME_DETAILS from '../../GraphQL/Games/Queries/GET_GAME_DETAILS'
 import '../../scss/style.scss'
 import { Game } from '../../types/game'
+import withApolloClient from '../../lib/with-apollo-client'
 
 import ActivityDetails from '../../components/ActivityDetails'
 import ActivityAttendees from '../../components/ActivityAttendees'
@@ -57,4 +58,4 @@ const gamePage = (props: IProps) => {
 // forward query { id: id } as a props
 gamePage.getInitialProps = (ctx: NextPageContext) => ctx.query
 
-export default gamePage
+export default withApolloClient(gamePage)
