@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { Game } from '../../types/game'
 import Link from 'next/link'
 
+import JoinActivityForm from '../JoinActivityForm'
+
 import Modal from '../Modal'
 import SportIcon from '../SportIcon'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
@@ -46,7 +48,7 @@ const ActivityCardBig = ({ gameID }: IProps) => {
     const openModal = () => setShow(true)
     const closeModal = () => setShow(false)
 
-
+    
 
     return (
         <>
@@ -108,21 +110,8 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                 </div>
             </a>
         </Link>
-        {show && <Modal closeModal={closeModal}>
-                <h2 className="font-sans text-night text-4xl mb-6">Join this activity</h2>
-                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
-                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
-                     Full Name
-                </label>
-                <input autoFocus className="appearance-none block w-full bg-grey-lighter text-night border border-red outline-none rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Michael Jordan"></input>
-                </div>
-                <div className="md:w-3/4 w-full px-3 mb-6 md:mb-0">
-                 <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
-                     Email Address
-                </label>
-                <input className="appearance-none block w-full outline-none bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-6" id="grid-first-name" type="email" placeholder="michael@jordan.com"></input>
-                <div className="flex flex-row mt-8"><input type="checkbox" className="form-checkbox h-6 w-6 text-darkgrass-100" required></input> <span className="font-sans ml-4">I agree and read the SportySpots <a className="underline" href="https://www.sportyspots.com/terms">Terms</a> and <a className="underline" href="https://www.sportyspots.com/privacy">Privacy policy</a>. </span></div>
-                </div>
+        {show && <Modal closeModal={closeModal} >         
+            <JoinActivityForm />
         </ Modal>}
         </>
     )
