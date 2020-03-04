@@ -5,6 +5,7 @@ const spotDetailsFragment = gql`
     fragment spotDetailsFragment on SpotType {
         uuid
         name
+        description
         images {
             uuid
             image

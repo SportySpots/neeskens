@@ -22,4 +22,5 @@ export interface Spot {
     amenities: any[];
     sports: Sport[];
     address: Address;
+    description: string;
 }
