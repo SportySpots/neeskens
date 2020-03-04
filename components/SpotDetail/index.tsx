@@ -1,5 +1,5 @@
 import React from 'react'
-import { Game } from '../../types/game'
+import { Spot } from '../../types/spot'
 
 import SportIcon from '../SportIcon'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
@@ -8,22 +8,22 @@ import WatchLater from '@material-ui/icons/WatchLater'
 import StaticMap from '../StaticMap'
 
 interface IProps {
-    game: Game
+    spot: Spot
 }
 
-const SpotDetail = ({ game }: IProps) => {
+const SpotDetail = ({ spot }: IProps) => {
 
     return (
         <div className="mx-2 bg-chalk rounded-lg">
             <div className="p-8">
-                <h2 className="font-sans text-3xl pb-8">{game.name}</h2>
+                <h2 className="font-sans text-3xl pb-8">{spot.name}</h2>
                 <div>
                     <div className="flex flex-row mb-8">
                         <SportIcon
                             className="mr-4 h-6 w-6"
-                            sport={game.sport}
+                            sport={spot.sports}
                         />
-                        <p className="font-sans text-xl">{game.sport.name}</p>
+                        <p className="font-sans text-xl">{spot.sports}</p>
                     </div>
                     <div className="flex flex-row mb-8">
                         <WatchLater className="mr-4" />
@@ -34,26 +34,12 @@ const SpotDetail = ({ game }: IProps) => {
                     <div className="flex flex-row ">
                         <LocationOnIcon className="mr-4" />
                         <p className="font-sans text-xl">
-                            {game.spot.address.formatted_address}
+                            {spot.address.formatted_address}
                         </p>
                     </div>
                 </div>
             </div>
-            <StaticMap className="w-full" coords={game.spot.address} />
-            <div className="p-8 mb-8">
-                <h3 className="font-sans font-medium text-2xl pb-4">
-                    Hosted by
-                </h3>
-                <div className="flex flex-row items-center">
-                    <img
-                        className="rounded-full h-16 w-16 object-cover"
-                        src={game.organizer.profile.avatar}
-                        alt="avatar"
-                    />
-                    <p className="font-sans ml-4 text-lg font-medium">
-                        {game.organizer.name}
-                    </p>
-                </div>
+            <StaticMap className="w-full" coords={spot.address} />
                 <a
                     href="https://sportyspots.page.link/download"
                     target="_blank"
@@ -65,7 +51,6 @@ const SpotDetail = ({ game }: IProps) => {
                     </button>
                 </a>
             </div>
-        </div>
     )
 }
 
