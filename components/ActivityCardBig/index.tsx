@@ -120,7 +120,8 @@ const ActivityCardBig = ({ gameID }: IProps) => {
                  <label className="font-sans block tracking-wide text-night text-l font-medium mb-2"   >
                      Email Address
                 </label>
-                <input className="appearance-none block w-full outline-none bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="email" placeholder="michael@jordan.com"></input>
+                <input className="appearance-none block w-full outline-none bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-6" id="grid-first-name" type="email" placeholder="michael@jordan.com"></input>
+                <div className="flex flex-row mt-8"><input type="checkbox" className="form-checkbox h-6 w-6 text-darkgrass-100" required></input> <span className="font-sans ml-4">I agree and read the SportySpots <a className="underline" href="https://www.sportyspots.com/terms">Terms</a> and <a className="underline" href="https://www.sportyspots.com/privacy">Privacy policy</a>. </span></div>
                 </div>
         </ Modal>}
         </>

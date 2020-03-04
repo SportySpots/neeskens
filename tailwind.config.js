@@ -3,6 +3,16 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+      customForms: theme => ({
+        default: {
+          input: {
+          '&:focus': {
+            boxShadow: undefined,
+            borderColor: undefined,
+          },
+        },
+      }
+    }),
     screens: {
       sm: '640px',
       md: '768px',
@@ -413,5 +423,7 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+      require('@tailwindcss/custom-forms'),
+  ],
 };
