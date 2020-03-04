@@ -3,6 +3,16 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+      customForms: theme => ({
+        default: {
+          input: {
+          '&:focus': {
+            boxShadow: undefined,
+            borderColor: undefined,
+          },
+        },
+      }
+    }),
     screens: {
       sm: '640px',
       md: '768px',
@@ -30,6 +40,7 @@ module.exports = {
       },
       grass: {
         100: '#009F36',
+        900: '#CCECD7',
       },
       darkgrass: {
         100: '#005537',
@@ -351,7 +362,7 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -412,5 +423,7 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+      require('@tailwindcss/custom-forms'),
+  ],
 };

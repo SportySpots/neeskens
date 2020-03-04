@@ -4,10 +4,7 @@ const DownloadApp = () => {
     return (
         <div className="mx-2">
             <div className="p-4">
-                <h2 className="text-center lg:text-left font-sans text-2xl">
-                    Download the app and join this activity
-                </h2>
-                <div className="flex flex-col lg:flex-row mt-4 justify-center lg:justify-start">
+                <div className="flex flex-col lg:flex-row mt-2 justify-center">
                     <a
                         className="flex justify-center"
                         href="https://itunes.apple.com/nl/app/sportyspots/id1391625376"

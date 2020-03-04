@@ -40,6 +40,11 @@ const gamePage = (props: IProps) => {
             <div className="flex flex-col lg:flex-row-reverse lg:pt-16">
                 <div className="mt-8 lg:my-8 lg:mr-32 lg:w-2/5">
                     <ActivityDetails game={game} />
+                    <div className="flex justify-center">
+                    <h2 className="text-center lg:text-left font-sans text-2xl">
+                    Download the app and join this activity
+                    </h2>
+                    </div>
                     <DownloadApp />
                 </div>
                 <div className="mt-8 mx-2 lg:my-8 lg:ml-32 lg:mr-16 lg:w-3/5 flex flex-col">
