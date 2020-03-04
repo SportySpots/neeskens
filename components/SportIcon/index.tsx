@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Sport } from '../../types/sport'
 
 interface IProps {
-    sport: Sport
-    className?: string
+    sport: Sport;
+    className?: string;
 }
 
 const sportCategoryToFilename: { [key: string]: string } = {

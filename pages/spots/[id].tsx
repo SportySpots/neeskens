@@ -14,7 +14,7 @@ import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 
 interface IProps {
-    id: string
+    id: string;
 }
 
 const spotPage = (props: IProps) => {

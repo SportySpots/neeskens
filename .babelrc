@@ -20,7 +20,8 @@
           "GraphQL": "./GraphQL",
           "types": "./types",
           "stores": "./stores",
-          "lib": "./lib"
+          "lib": "./lib",
+          "@": "."
         }
       }]
   ],

@@ -14,6 +14,7 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/interface-name-prefix": "off",
         // "@typescript-eslint/member-delimiter-style": "off",
         "react/react-in-jsx-scope": "off",
     }
